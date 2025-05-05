@@ -1,0 +1,13 @@
+.cashless-cols .wp-block-column{
+    background-color: var(--softblue);
+    border-radius: var(--borderradius);
+    padding: 32px 48px;
+}
+#post-432 ol,
+#post-432 ul {
+    margin-left: 0;
+}
+.cashless-cols .wp-block-column a{
+    color: var(--yellow);
+    text-decoration: underline;
+}

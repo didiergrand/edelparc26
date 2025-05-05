@@ -1,0 +1,20 @@
+
+.menu-concert{
+    margin: 5px 0 30px;
+    border: 1px solid var(--darkblue);
+    border-radius: 10px;
+}
+.menu-concert p{
+    padding: 20px;
+    text-align: center;
+    line-height: 1.1;
+}
+.menu-concert .wp-block-group__inner-container h2{
+    background-color: var(--darkblue);
+    color: var(--white);
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 20px;
+    text-align: center;
+    line-height: 1;
+}
