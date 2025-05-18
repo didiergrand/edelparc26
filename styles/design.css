@@ -425,21 +425,33 @@
   #masthead .site-description {
     display: none;
   }
-  
-  #masthead .site-branding {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    align-items: center;
-    grid-area: logo;
+  @media screen and (max-width:998px){
+    #masthead .site-branding{
+      display: flex;
+      flex-direction: column;
+      margin: 0 20px 20px;
+    }
+    #masthead .site-branding img {
+      max-width: 200px;
+    }
   }
-  #masthead .site-branding img {
-    width: auto;
-    height: 240px;
-  }
-  #masthead .site-branding img.home-baseline{
-    width: auto;
-    height: 80px;
-    margin: 0 auto;
+  @media screen and (min-width: 999px){
+    
+    #masthead .site-branding {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      align-items: center;
+      grid-area: logo;
+    }
+    #masthead .site-branding img {
+      width: auto;
+      max-height: 240px;
+    }
+    #masthead .site-branding img.home-baseline{
+      width: auto;
+      max-height: 80px;
+      margin: 0 auto;
+    }
   }
   
   .container {
@@ -589,11 +601,17 @@
       color: var(--white);
     }
   }
+  .site,
   .single{
-    background-color:var(--mediumblue);
-    background-size: cover;
-    background-position: right bottom;
-    background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
+    background-color: var(--lightblue);
+  }
+  @media screen and (min-width: 999px) {
+    .site,
+    .single{
+      background-size: cover;
+      background-position: right bottom;
+      background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
+    }
   }
   @media screen and (min-width: 999px) {
     .single-content{
@@ -913,6 +931,7 @@
     margin-left: 2%;
     margin-top: 3%;
     height: 90%;
+    padding: 60px;
   }
   .toggled #primary-menu li {
     grid-column: span 1;
