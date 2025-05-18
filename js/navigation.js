@@ -37,8 +37,12 @@
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
+			document.body.style.overflow = '';
+			menu.style.position = '';
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
+			document.body.style.overflow = 'hidden';
+			menu.style.position = 'fixed';
 		}
 	} );
 
@@ -49,6 +53,11 @@
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
 			button.setAttribute( 'aria-expanded', 'false' );
+			document.body.style.overflow = '';
+			menu.style.position = '';
+			menu.style.top = '';
+			menu.style.left = '';
+			menu.style.width = '';
 		}
 	} );
 

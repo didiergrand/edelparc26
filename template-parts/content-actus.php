@@ -28,28 +28,52 @@
 	<div class="home_actus-content">
 
 
+
+	<?php if( get_post_meta($post->ID, "subtitle", true) ): ?>
+
+<p class="subtitle"><?php echo get_post_meta( get_the_ID(), 'subtitle', true ); ?></p>
+<?php endif; ?>
+
 	<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
-			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>" class="btn btn-primary">			<header class="entry-header">
+			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>">			<header class="entry-header">
 				<?php
 				the_title( '<h3 class="entry-title">', '</h3>' );
 				?>
 			</header></a>
 		<?php else: ?>
 		<!-- something can go here if you don't have the custom field, but it's optional -->
-			<a href="<?php the_permalink(); ?>" class="btn btn-primary"><header class="entry-header">
+		<a href="<?php the_permalink(); ?>">
+			<header class="entry-header">
 				<?php
 				the_title( '<h3 class="entry-title">', '</h3>' );
 				?>
-			</header></a>
-		<?php endif; ?>   
+			</header>
+		</a>
+		<?php endif; ?>
+
+
 		<?php
 			the_excerpt();
 		?>
+		<div style="text-align:center">
 		<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
-			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>" class="btn btn-primary">Lire la suite</a>
+			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>" class="btn btn-primary">
+			<?php if( get_post_meta($post->ID, "custom_link_text", true) ): ?>
+					<?php echo get_post_meta( get_the_ID(), 'custom_link_text', true ); ?>
+				<?php else: ?>
+					Lire la suite
+				<?php endif; ?>
+			</a>
 		<?php else: ?>
 		<!-- something can go here if you don't have the custom field, but it's optional -->
-			<a href="<?php the_permalink(); ?>" class="btn btn-primary">Lire la suite</a>
+			<a href="<?php the_permalink(); ?>" class="btn btn-primary">
+				<?php if( get_post_meta($post->ID, "custom_link_text", true) ): ?>
+					<?php echo get_post_meta( get_the_ID(), 'custom_link_text', true ); ?>
+				<?php else: ?>
+					Lire la suite
+				<?php endif; ?>
+			</a>
 		<?php endif; ?>   
+				</div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

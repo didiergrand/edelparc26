@@ -29,7 +29,8 @@
 	</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -38,8 +39,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
+			<img src="/wp-content/uploads/2025/05/Logo-EDELPARC26.png" alt="EDELPARC26 Logo" class="home-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/Logo-EDELPARC26-baseline.png" alt="EDELPARC26 Logo" class="home-baseline">
+        <?php
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -77,14 +79,4 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<nav id="social-navigation" class="social-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'social-1',
-					'menu_id'        => 'social',
-				)
-			);					
-			?>
-		</nav><!-- #social-navigation -->
 	</header><!-- #masthead -->

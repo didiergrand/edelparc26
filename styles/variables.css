@@ -3,39 +3,36 @@
 --------------------------------------------- */
 :root{
     --white: #fff;
-    --black: #000;
+    --black: #1e1e1e;
     
-    --yellowlight: #FFF5A9;
-    --yellow: #FFC932;
-    --yellowhover: #FE8523;
+    --yellowlight: #ffe182;
+    --yellow: #FFCE35;
+    --yellowhover: #ff9c35;
   
   
-    --textblue: #0E414E;    /* Text Blue / Texts & buttons */
-    --textbuehover: #70AEDD; /* Text Blue Hover / Texts links & buttons hover */
-    --darkblue: #003746; /*  Dark Blue / Bg boxes on blue bg */
-    --ultradarkblue: #062127; /*  Ultra Dark Blue / Bg boxes on blue bg */
-    --softblue: #00B1C3; /* Soft Blue / Bg boxes on white bg */
-    --softbluehover: #007B88; /* Soft Blue / Bg boxes on white bg */
-    --softbluelight: #00E7FF; /* Soft Blue Light / Bg boxes on white bg */
-    --mediumblue: #005469; /* Medium Blue / Bg boxes on white bg */
-    --lightblue: #D6E8F5; /* Light Blue / Bg forms & subnav */
+    --textblue: #182437;    /* Text Blue / Texts & buttons */
+    --textbuehover: #1075BB; /* Text Blue Hover / Texts links & buttons hover */
+    --darkblue: #182437; /*  Dark Blue / Bg boxes on blue bg */
+    --ultradarkblue: #1E1E1E; /*  Ultra Dark Blue / Bg boxes on blue bg */
+    --softblue: #1075BB; /* Soft Blue / Bg boxes on white bg */
+    --softbluehover: #1083bb; /* Soft Blue / Bg boxes on white bg */
+    --softbluelight: #10a0bb; /* Soft Blue Light / Bg boxes on white bg */
+    --mediumblue: #1067bb; /* Medium Blue / Bg boxes on white bg */
+    --lightblue: #CBE9FB; /* Light Blue / Bg forms & subnav */
   
   
   
     
-    --redlight: #EF4E42; 
-    --red: #E93531; /* Red / Main menu active links */
-    --redhover: #BF2F33;
+    --redlight: #C6067F; 
+    --red: #A80A7C; /* Red / Main menu active links */
+    --redhover: #C6067F;
   
   
-    --titlefont: 'Refrigerator Extrabold', Impact, 'Arial Narrow Bold', Arial, sans-serif;
-    --sansfont: 'Cabin', sans-serif;
-    --serifont: var(--titlefont);
+    --titlefont: 'Phosphate Solid', Impact, 'Arial Narrow Bold', Arial, sans-serif;
+    --headingfont: 'Barlow Condensed', sans-serif;
+    --sansfont: 'Barlow', sans-serif;
   
-    --sansnormalweight: 400;
-    --sansboldweight: 700;
-    --serifnormalweight: 400;
-    --serifboldweight: 700;
-  
+    --normalweight: 400;
+    --boldweight: 700;
     --borderradius: 8px;
   }

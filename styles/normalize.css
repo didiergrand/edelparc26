@@ -89,7 +89,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: var(--sansboldweight);
+  font-weight: var(--boldweight);
 }
 
 /**
