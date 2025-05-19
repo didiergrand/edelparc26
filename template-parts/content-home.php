@@ -12,7 +12,7 @@
 
 
 	<?php stmartin2024_post_thumbnail(); ?>
-	<div class="container-small">
+	<div class="container">
 	<div class="entry-content">	
 		<header class="entry-header">
 			<?php

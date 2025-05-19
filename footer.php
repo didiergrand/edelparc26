@@ -13,7 +13,7 @@
 ?>
     <!-- Footer Widget Area -->
 	<div id="footer-widget">
-		<div class="container-small">
+		<div class="container">
 			<div class="footer-widget-area">
 				<?php
 				if (is_active_sidebar('footer-1')) {

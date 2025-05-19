@@ -38,7 +38,6 @@
   
   h1,
   h2{
-    font-family: var(--titlefont);
     text-transform: uppercase;
   }
   h3,
@@ -57,8 +56,9 @@
     letter-spacing: 1px;
     margin-top: 0px;
     font-size: 40px;
-    line-height: 40px;
     padding-bottom: 16px;
+    font-family: var(--titlefont);
+
   }
   .background-title{
       margin: 20px 0;
@@ -73,6 +73,7 @@
     letter-spacing: 1px;
     margin: 0;
     margin-bottom: 1rem;
+    font-family: var(--titlefont);
   }
   h3 {
     font-weight: var(--boldweight);
@@ -457,7 +458,7 @@
   .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
   }
   
   .container-small {

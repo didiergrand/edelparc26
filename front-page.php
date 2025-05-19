@@ -38,7 +38,7 @@ if ($q2->have_posts()) {
     ?>
     <section id="actus">
         <h2>Dernières actualités</h2>
-        <div class="container-small actus3cols">
+        <div class="container actus3cols">
             <?php
             while ($q2->have_posts()) {
                 $q2->the_post();
