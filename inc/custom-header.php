@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Giron_St-Martin_2024
+ * @package EDELPARC26
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses stmartin2024_header_style()
+ * @uses edelparc26_header_style()
  */
-function stmartin2024_custom_header_setup() {
+function edelparc26_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'stmartin2024_custom_header_args',
+			'edelparc26_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'stmartin2024_header_style',
+				'wp-head-callback'   => 'edelparc26_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'stmartin2024_custom_header_setup' );
+add_action( 'after_setup_theme', 'edelparc26_custom_header_setup' );
 
-if ( ! function_exists( 'stmartin2024_header_style' ) ) :
+if ( ! function_exists( 'edelparc26_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see stmartin2024_custom_header_setup().
+	 * @see edelparc26_custom_header_setup().
 	 */
-	function stmartin2024_header_style() {
+	function edelparc26_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

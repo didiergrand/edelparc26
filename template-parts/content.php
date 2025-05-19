@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Giron_St-Martin_2024
+ * @package EDELPARC26
  */
 
 ?>	
 <section>
-	<div class="background-title">
+	<div class="background-title">1
 		
 	<header class="entry-header container">
 	<?php
@@ -23,8 +23,8 @@
 		?>
 		<div class="entry-meta">
 			<?php
-			stmartin2024_posted_on();
-			stmartin2024_posted_by();
+			edelparc26_posted_on();
+			edelparc26_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 	<?php endif; ?>
@@ -39,7 +39,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'stmartin2024' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'edelparc26' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -52,7 +52,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'stmartin2024' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'edelparc26' ),
 				'after'  => '</div>',
 			)
 		);
@@ -60,7 +60,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php stmartin2024_entry_footer(); ?>
+		<?php edelparc26_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php

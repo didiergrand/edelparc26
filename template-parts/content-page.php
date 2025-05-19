@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Giron_St-Martin_2024
+ * @package EDELPARC26
  */
 
 ?>
@@ -18,7 +18,7 @@
 		</div>
 			<div class="intro-image">
 			<?php
-			stmartin2024_post_thumbnail(); // Affiche l'image mise en avant avec la fonction stmartin2024_post_thumbnail()
+			edelparc26_post_thumbnail(); // Affiche l'image mise en avant avec la fonction edelparc26_post_thumbnail()
 			?>
 			</div>
 	</div>
@@ -47,7 +47,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'stmartin2024' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'edelparc26' ),
 				'after'  => '</div>',
 			)
 		);
@@ -61,7 +61,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'stmartin2024' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'edelparc26' ),
 						array(
 							'span' => array(
 								'class' => array(),

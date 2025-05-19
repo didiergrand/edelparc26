@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Giron_St-Martin_2024
+ * @package EDELPARC26
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function stmartin2024_jetpack_setup() {
+function edelparc26_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'stmartin2024_infinite_scroll_render',
+			'render'    => 'edelparc26_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function stmartin2024_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'stmartin2024-style',
+				'stylesheet' => 'edelparc26-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function stmartin2024_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'stmartin2024_jetpack_setup' );
+add_action( 'after_setup_theme', 'edelparc26_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function stmartin2024_infinite_scroll_render() {
+function edelparc26_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

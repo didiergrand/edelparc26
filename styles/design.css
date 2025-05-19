@@ -277,11 +277,11 @@
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url("https://www.stmartin2024.ch/wp-content/themes/stmartin2024/images/download_arrow.svg");
+    background-image: url("https://www.edelparc26.ch/wp-content/themes/edelparc26/images/download_arrow.svg");
   }
   
   a.download-link-blue:before {
-    background-image: url("https://www.stmartin2024.ch/wp-content/themes/stmartin2024/images/download_arrow-blue.svg");
+    background-image: url("https://www.edelparc26.ch/wp-content/themes/edelparc26/images/download_arrow-blue.svg");
   }
   
   /* Forms
@@ -1496,7 +1496,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('/wp-content/themes/stmartin2024/images/bggeometric.png');
+    background-image: url('/wp-content/themes/edelparc26/images/bggeometric.png');
     background-position: center;
   }
   .hotnews-container{

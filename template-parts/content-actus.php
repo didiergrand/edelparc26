@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Giron_St-Martin_2024
+ * @package EDELPARC26
  */
 
 ?>
