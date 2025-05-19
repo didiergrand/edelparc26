@@ -48,10 +48,11 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
-				?>		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				?>		
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src="/wp-content/uploads/2025/05/Logo-EDELPARC26.png" alt="EDELPARC26 Logo" class="home-logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/Logo-EDELPARC26-baseline.png" alt="EDELPARC26 Logo" class="home-baseline">
-	</a>
+	</a>				<img src="<?php echo get_template_directory_uri(); ?>/images/Logo-EDELPARC26-baseline.png" alt="EDELPARC26 Logo" class="home-baseline">
+
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;

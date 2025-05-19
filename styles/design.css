@@ -426,11 +426,15 @@
   #masthead .site-description {
     display: none;
   }
+  
+  #masthead .site-branding{
+    margin: 0 20px 20px;
+    gap: 0 20px;
+  }
   @media screen and (max-width:998px){
     #masthead .site-branding{
       display: flex;
       flex-direction: column;
-      margin: 0 20px 20px;
     }
     #masthead .site-branding img {
       max-width: 200px;
@@ -893,7 +897,6 @@
     transition: all .1s ease-in-out;
     padding: 0;
     right: 24px;
-    top: 24px;
   }
   .toggled .menu-toggle {
     transition: all .5s ease-in-out;
@@ -1017,6 +1020,10 @@
   
   .site-main{
     min-height: calc(100vh - 185px);
+    margin-top: 100px;
+  }
+  .home .site-main{
+    margin-top: 0;
   }
   .site-info img{
     position: relative;
@@ -1791,4 +1798,32 @@
   &:visited{
     color: var(--yellowlight);
   }
+}
+/* Content Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content thumbnail";
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.thumbnail {
+    grid-area: thumbnail;
+    min-width: 0;
+}
+
+.content {
+    grid-area: content;
+    min-width: 0;
+    pz
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "thumbnail"
+            "content";
+    }
 }

@@ -9,7 +9,7 @@
 
 ?>	
 <section>
-	<div class="background-title">1
+	<div class="background-title">
 		
 	<header class="entry-header container">
 	<?php
