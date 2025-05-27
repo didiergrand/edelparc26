@@ -1,0 +1,125 @@
+
+
+#scene {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+  }
+
+
+  /* ----------- Ballons / bulles ----------- */
+  .bulle {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    user-select: none;
+    cursor: grab;
+    transition: transform .25s;
+    will-change: transform;
+  }
+
+  .bulle:hover {
+    transform: scale(1.08);
+    z-index: 10000;
+  }
+
+  /* Texte + bouton (apparait au sur‑vol) */
+  .bulle button {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity .2s;
+    padding: 4px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: inherit;
+    pointer-events: none;
+    width: 200px;
+  }
+
+  .bulle:hover button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ----------- Couleurs ----------- */
+  .rose {
+    background: #BF2B7A;
+  }
+
+
+  .bleu {
+    background: #3C70B5;
+  }
+
+  .jaune {
+    background: #FECE36;
+  }
+
+  .marine {
+    background: #272B4D;
+  }
+
+  /* ----------- Tailles (Ø) ----------- */
+  .petit {
+    width: 180px;
+    height: 180px;
+    font-size: 14px;
+  }
+
+  .moyen {
+    width: 240px;
+    height: 240px;
+    font-size: 16px;
+  }
+
+  .grand {
+    width: 360px;
+    height: 360px;
+    font-size: 18px;
+  }
+
+  /* ----------- Effet d’explosion (lors du masquage) ----------- */
+  @keyframes explode {
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .explode {
+    animation: explode .45s forwards;
+  }
+
+  /* ----------- Panneau de contrôle ----------- */
+  #controls {
+    display: flex;
+    gap: 6px
+  }
+
+  #controls button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold
+  }
+
+  #controls .off {
+    opacity: .35;
+    filter: grayscale(.6);
+  }
+
+  #controls .active {
+    outline: 2px solid #0004;
+  }
