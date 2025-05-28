@@ -6,6 +6,7 @@
       const scene = document.getElementById('scene');
       const btns = [...document.querySelectorAll('#controls button')];
       let animationTimer = null;
+      let animationFrameId = null;
       const ANIMATION_DURATION = 5000; // 5 secondes en millisecondes
 
       const sizeFactor = el => el.classList.contains('petit') ? 1.3 : el.classList.contains('petit') ? 1 : 0.75;
@@ -60,10 +61,20 @@
       /************** Physique **********************/
       function animate() {
         physicsStep();
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
+      }
+
+      function stopAnimation() {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
       }
 
       function startAnimationTimer() {
+        // Arrêter l'animation existante
+        stopAnimation();
+        
         // Annuler le timer existant s'il y en a un
         if (animationTimer) {
           clearTimeout(animationTimer);
@@ -74,7 +85,7 @@
         
         // Arrêter l'animation après 5 secondes
         animationTimer = setTimeout(() => {
-          cancelAnimationFrame(animationTimer);
+          stopAnimation();
         }, ANIMATION_DURATION);
       }
 
