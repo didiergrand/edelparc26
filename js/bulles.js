@@ -43,6 +43,8 @@
       marine: true
     };
 
+    let animationRunning = true;
+
     /************** Placement initial *************/
     function init() {
       const W = scene.offsetWidth;
@@ -63,19 +65,25 @@
     /************** Physique **********************/
     function animate(currentTime) {
       if (!isPageVisible) {
-        requestAnimationFrame(animate);
+        if (animationRunning) requestAnimationFrame(animate);
         return;
       }
 
       const deltaTime = currentTime - lastFrameTime;
       if (deltaTime < frameInterval) {
-        requestAnimationFrame(animate);
+        if (animationRunning) requestAnimationFrame(animate);
         return;
       }
 
       lastFrameTime = currentTime;
       physicsStep();
-      requestAnimationFrame(animate);
+
+      if (allBubblesAtRest()) {
+        animationRunning = false;
+        return;
+      }
+
+      if (animationRunning) requestAnimationFrame(animate);
     }
 
     function updateCollisionGrid() {
@@ -248,6 +256,10 @@
       offsetX = e.clientX - dragging.x;
       offsetY = e.clientY - dragging.y;
       t.style.cursor = 'grabbing';
+      if (!animationRunning) {
+        animationRunning = true;
+        requestAnimationFrame(animate);
+      }
     });
     window.addEventListener('mousemove', e => {
       if (!dragging) return;
@@ -275,6 +287,13 @@
     document.addEventListener('visibilitychange', () => {
       isPageVisible = document.visibilityState === 'visible';
     });
+
+    function allBubblesAtRest() {
+      return bubbles.every(b =>
+        !b.visible ||
+        (Math.abs(b.vx) < 0.01 && Math.abs(b.vy) < 0.01 && b.y - b.r <= boundsPad + 1)
+      );
+    }
 
     init();
     requestAnimationFrame(animate);
