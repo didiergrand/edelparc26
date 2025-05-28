@@ -5,6 +5,9 @@
     /************** Constantes & sélecteurs ****************/
     const scene = document.getElementById('scene');
     const btns = [...document.querySelectorAll('#controls button')];
+    let lastFrameTime = 0;
+    const frameInterval = 1000 / 60; // 60 FPS max
+    let isPageVisible = true;
 
     const sizeFactor = el => el.classList.contains('petit') ? 1.3 : el.classList.contains('petit') ? 1 : 0.75;
 
@@ -30,6 +33,8 @@
     const baseAccel = -0.2;
     const damping = 0.995;
     const boundsPad = 10;
+    let collisionGrid = [];
+    const gridCellSize = 100; // Taille de la cellule de la grille
 
     let visibility = {
       rose: true,
@@ -56,14 +61,47 @@
     }
 
     /************** Physique **********************/
-    function animate() {
+    function animate(currentTime) {
+      if (!isPageVisible) {
+        requestAnimationFrame(animate);
+        return;
+      }
+
+      const deltaTime = currentTime - lastFrameTime;
+      if (deltaTime < frameInterval) {
+        requestAnimationFrame(animate);
+        return;
+      }
+
+      lastFrameTime = currentTime;
       physicsStep();
       requestAnimationFrame(animate);
+    }
+
+    function updateCollisionGrid() {
+      const W = scene.offsetWidth;
+      const H = scene.offsetHeight;
+      const gridWidth = Math.ceil(W / gridCellSize);
+      const gridHeight = Math.ceil(H / gridCellSize);
+      
+      collisionGrid = Array(gridWidth).fill().map(() => Array(gridHeight).fill().map(() => []));
+      
+      bubbles.forEach(b => {
+        if (!b.visible || b.el.classList.contains('explode')) return;
+        const cellX = Math.floor(b.x / gridCellSize);
+        const cellY = Math.floor(b.y / gridCellSize);
+        if (cellX >= 0 && cellX < gridWidth && cellY >= 0 && cellY < gridHeight) {
+          collisionGrid[cellX][cellY].push(b);
+        }
+      });
     }
 
     function physicsStep() {
       const W = scene.offsetWidth;
       const H = scene.offsetHeight;
+
+      // Mise à jour de la grille de collision
+      updateCollisionGrid();
 
       for (const b of bubbles) {
         if (!b.visible || b.el.classList.contains('explode')) continue;
@@ -87,31 +125,36 @@
         }
       }
 
-      for (let i = 0; i < bubbles.length; i++) {
-        const A = bubbles[i];
-        if (!A.visible || A.el.classList.contains('explode')) continue;
-        for (let j = i + 1; j < bubbles.length; j++) {
-          const B = bubbles[j];
-          if (!B.visible || B.el.classList.contains('explode')) continue;
-          const dx = B.x - A.x,
-            dy = B.y - A.y,
-            dist = Math.hypot(dx, dy),
-            min = A.r + B.r;
-          if (dist < min && dist > 0) {
-            const overlap = min - dist,
-              nx = dx / dist,
-              ny = dy / dist;
-            A.x -= nx * overlap / 2;
-            A.y -= ny * overlap / 2;
-            B.x += nx * overlap / 2;
-            B.y += ny * overlap / 2;
-            const va = A.vx * nx + A.vy * ny,
-              vb = B.vx * nx + B.vy * ny,
-              diff = vb - va;
-            A.vx += diff * nx;
-            A.vy += diff * ny;
-            B.vx -= diff * nx;
-            B.vy -= diff * ny;
+      // Vérification des collisions uniquement dans les cellules adjacentes
+      for (let i = 0; i < collisionGrid.length; i++) {
+        for (let j = 0; j < collisionGrid[i].length; j++) {
+          const cell = collisionGrid[i][j];
+          for (let k = 0; k < cell.length; k++) {
+            const A = cell[k];
+            if (!A.visible || A.el.classList.contains('explode')) continue;
+            
+            // Vérifier les collisions avec les bulles dans la même cellule
+            for (let l = k + 1; l < cell.length; l++) {
+              const B = cell[l];
+              if (!B.visible || B.el.classList.contains('explode')) continue;
+              checkCollision(A, B);
+            }
+            
+            // Vérifier les collisions avec les bulles dans les cellules adjacentes
+            for (let di = -1; di <= 1; di++) {
+              for (let dj = -1; dj <= 1; dj++) {
+                if (di === 0 && dj === 0) continue;
+                const ni = i + di;
+                const nj = j + dj;
+                if (ni >= 0 && ni < collisionGrid.length && nj >= 0 && nj < collisionGrid[ni].length) {
+                  const adjacentCell = collisionGrid[ni][nj];
+                  for (const B of adjacentCell) {
+                    if (!B.visible || B.el.classList.contains('explode')) continue;
+                    checkCollision(A, B);
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -119,6 +162,30 @@
       bubbles.forEach(b => {
         if (b.visible) updateElement(b);
       });
+    }
+
+    function checkCollision(A, B) {
+      const dx = B.x - A.x;
+      const dy = B.y - A.y;
+      const dist = Math.hypot(dx, dy);
+      const min = A.r + B.r;
+      
+      if (dist < min && dist > 0) {
+        const overlap = min - dist;
+        const nx = dx / dist;
+        const ny = dy / dist;
+        A.x -= nx * overlap / 2;
+        A.y -= ny * overlap / 2;
+        B.x += nx * overlap / 2;
+        B.y += ny * overlap / 2;
+        const va = A.vx * nx + A.vy * ny;
+        const vb = B.vx * nx + B.vy * ny;
+        const diff = vb - va;
+        A.vx += diff * nx;
+        A.vy += diff * ny;
+        B.vx -= diff * nx;
+        B.vy -= diff * ny;
+      }
     }
 
     /************** Visibilité / explosion ***********/
@@ -140,7 +207,7 @@
       list.forEach(b => {
         b.visible = true;
         b.el.style.display = '';
-        b.vy = 0; // on remet la vitesse verticale à 0 pour qu’elles repartent directement vers le haut
+        b.vy = 0; // on remet la vitesse verticale à 0 pour qu'elles repartent directement vers le haut
         updateElement(b); // appliquer immédiatement la position mémorisée
       });
     }
@@ -170,7 +237,7 @@
 
     btns.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
 
-    /************** Drag & Drop ***********************/
+    /************** Drag & Drop ***********************/
     let dragging = null,
       offsetX = 0,
       offsetY = 0;
@@ -204,6 +271,11 @@
       });
     });
 
+    // Ajout de la détection de visibilité de la page
+    document.addEventListener('visibilitychange', () => {
+      isPageVisible = document.visibilityState === 'visible';
+    });
+
     init();
-    animate();
+    requestAnimationFrame(animate);
   })();
