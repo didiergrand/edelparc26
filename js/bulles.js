@@ -182,18 +182,20 @@
             }
             visibility[col] = true;
           }
-          return;
-        }
-        for (const col of ['rose', 'bleu', 'jaune', 'marine']) {
-          const list = bubbles.filter(b => b.color === col);
-          if (col === filter) {
-            if (!visibility[col]) respawn(list);
-            visibility[col] = true;
-          } else {
-            if (visibility[col]) explode(list);
-            visibility[col] = false;
+        } else {
+          for (const col of ['rose', 'bleu', 'jaune', 'marine']) {
+            const list = bubbles.filter(b => b.color === col);
+            if (col === filter) {
+              if (!visibility[col]) respawn(list);
+              visibility[col] = true;
+            } else {
+              if (visibility[col]) explode(list);
+              visibility[col] = false;
+            }
           }
         }
+        // Relancer l'animation après avoir appliqué le filtre
+        startAnimationTimer();
       }
 
       btns.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
