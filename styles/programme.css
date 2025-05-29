@@ -1,54 +1,57 @@
-.programme-jours .wp-block-group__inner-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-}
-@media screen and (min-width: 1000px) {
-    .programme-jours .wp-block-group__inner-container{
-        grid-template-columns: 1fr 1fr;
-    }
-    
-}
-.programme-jours .wp-block-group__inner-container > div > div{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--darkblue);
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    gap: 0;
-}
-.programme-jours .wp-block-group__inner-container > div > div h3{
-    background-color: var(--darkblue);
-    color: var(--white);
-    margin: 0;
-    border-radius: 8px 8px 0 0;
-    padding: 20px;
-    text-align: center;
-    line-height: 1;
-}
-.programme-jours .wp-block-group__inner-container > div > div h3 em{
-    font-size: 12px;
-    font-weight: 400;
-    font-family: var(--sansfont);
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-style: normal;
-}
-.programme-jours .wp-block-group__inner-container > div > div p{
-    margin: 0;
-    padding: 20px;
-}
-.programme-jours .wp-block-group__inner-container > div > div .wp-block-table{
-    width: 90%;
-    margin: 20px auto;
-}
-.programme-jours .wp-block-table td, 
-.programme-jours .wp-block-table th{
-    border: 0;
-}
-.programme-jours .wp-block-table th:first-child,
-.programme-jours .wp-block-table td:first-child{
-    text-align: right;
-    width: 70px;
-}
+    /* --- Variables de couleurs --- */
+    :root {
+        --blue: #1f6cb9;
+        --magenta: #b91d76;
+        --navy: #0f1f46;
+        --bg: #d9efff;
+        --gap: 12px;
+      }
+  
+
+      /* --- Conteneur grille --- */
+      .schedule {
+        max-width: 950px;
+        margin: 40px auto;
+  
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); /* 4 colonnes de même taille */
+        grid-auto-rows: 80px;               /* hauteur de base d'une ligne */
+        gap: var(--gap);
+        padding: var(--gap);
+        background: var(--bg);
+      }
+  
+      /* --- Cartons (événements) --- */
+      .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+  
+        color: #fff;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 17px;
+        line-height: 1.25;
+      }
+  
+      /* Couleurs */
+      .blue    { background: var(--blue);    }
+      .magenta { background: var(--magenta); }
+      .navy    { background: var(--navy);    }
+      .blank   { background: var(--bg); color: transparent; }
+      .black   { color: black}
+  
+      /* Tailles verticales (nombre de lignes à occuper) */
+      .h-1 { grid-row: span 1; }
+      .h-2 { grid-row: span 2; }
+      .h-3 { grid-row: span 3; }
+      .h-4 { grid-row: span 4; }
+      .h-5 { grid-row: span 5; }
+  
+      /* Un tout petit peu de responsive : 2 colonnes sur mobile */
+      @media (max-width: 720px) {
+        .schedule {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
