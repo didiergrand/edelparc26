@@ -50,6 +50,18 @@
     opacity: 1;
     pointer-events: auto;
   }
+  .bulle.rose:hover .membres {
+    background: #8f1a58;
+  }
+  .bulle.bleu:hover .membres {
+    background: #214b82;
+  }
+  .bulle.jaune:hover .membres {
+    background: #cea10e;
+  }
+  .bulle.marine:hover .membres {
+    background: #141629;
+  }
 
   /* ----------- Couleurs ----------- */
   .rose {
