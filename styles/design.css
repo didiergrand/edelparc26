@@ -60,7 +60,7 @@
     font-family: var(--titlefont);
 
   }
-  article  .post, article .page{
+  article.post, article.page{
     padding-bottom: 200px;
   }
   .background-title{
