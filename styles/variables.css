@@ -4,27 +4,27 @@
     --white: #fff;
     --black: #1e1e1e;
     
-    --yellowlight: #ffe182;
+    --yellowlight: #ffe559;
     --yellow: #FFCE35;
-    --yellowhover: #ff9c35;
+    --yellowhover: #ffc044;
 
 
     --textblue: #182437;    /* Text Blue / Texts & buttons */
     --textbuehover: #1075BB; /* Text Blue Hover / Texts links & buttons hover */
     --darkblue: #182437; /*  Dark Blue / Bg boxes on blue bg */
-    --ultradarkblue: #1E1E1E; /*  Ultra Dark Blue / Bg boxes on blue bg */
+    --ultradarkblue: #152232; /*  Ultra Dark Blue / Bg boxes on blue bg */
     --softblue: #1075BB; /* Soft Blue / Bg boxes on white bg */
-    --softbluehover: #1083bb; /* Soft Blue / Bg boxes on white bg */
-    --softbluelight: #10a0bb; /* Soft Blue Light / Bg boxes on white bg */
+    --softbluehover: #006cab; /* Soft Blue / Bg boxes on white bg */
+    --softbluelight: #008cd3; /* Soft Blue Light / Bg boxes on white bg */
     --mediumblue: #1067bb; /* Medium Blue / Bg boxes on white bg */
     --lightblue: #CBE9FB; /* Light Blue / Bg forms & subnav */
 
 
 
     
-    --redlight: #C6067F; 
+    --redlight: #e50b96; 
     --red: #A80A7C; /* Red / Main menu active links */
-    --redhover: #C6067F;
+    --redhover: #bf0874;
 
     --titlefont: 'Phosphate Solid', Impact, 'Arial Narrow Bold', Arial, sans-serif;
     --headingfont: 'Barlow Condensed', sans-serif;
