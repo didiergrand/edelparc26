@@ -33,7 +33,7 @@
       .darkmagenta { background: var(--red); }
       .navy    { background: var(--darkblue);    }
       .blank   { background: var(--lightblue); color: transparent; }
-      .black   { color: var(--black);}
+      .black   { color: var(--black); font-weight: var(--boldweight); }
   
       /* Tailles verticales (nombre de lignes à occuper) */
       .h-1 { grid-row: span 1; }
