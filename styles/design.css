@@ -80,7 +80,7 @@
   }
   h3 {
     font-weight: var(--boldweight);
-    font-size: 1.3rem;
+    font-size: 2rem;
     line-height: 2rem;
     padding: 0;
     margin-top: 0.5rem;
@@ -474,7 +474,7 @@
     padding: 20px;
   }
   .container-xsmall {
-    max-width: 900px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 20px;
   }

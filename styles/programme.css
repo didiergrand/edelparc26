@@ -4,7 +4,7 @@
       /* --- Conteneur grille --- */
       .schedule {
         max-width: 950px;
-        margin: 40px auto;
+        margin: 0 auto 80px;
   
         display: grid;
         grid-template-columns: repeat(7, 1fr); /* 4 colonnes de même taille */
