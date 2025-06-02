@@ -1,12 +1,6 @@
     /* --- Variables de couleurs --- */
-    :root {
-        --blue: #1f6cb9;
-        --magenta: #b91d76;
-        --navy: #0f1f46;
-        --bg: #d9efff;
-        --gap: 12px;
-      }
-  
+
+
       /* --- Conteneur grille --- */
       .schedule {
         max-width: 950px;
@@ -34,11 +28,12 @@
       }
   
       /* Couleurs */
-      .blue    { background: var(--blue);    }
-      .magenta { background: var(--magenta); }
-      .navy    { background: var(--navy);    }
-      .blank   { background: var(--bg); color: transparent; }
-      .black   { color: black}
+      .blue    { background: var(--softblue);    }
+      .magenta { background: var(--redlight); }
+      .darkmagenta { background: var(--red); }
+      .navy    { background: var(--darkblue);    }
+      .blank   { background: var(--lightblue); color: transparent; }
+      .black   { color: var(--black);}
   
       /* Tailles verticales (nombre de lignes à occuper) */
       .h-1 { grid-row: span 1; }

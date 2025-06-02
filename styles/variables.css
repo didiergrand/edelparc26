@@ -1,4 +1,3 @@
-
 /* variables
 --------------------------------------------- */
 :root{
@@ -8,8 +7,8 @@
     --yellowlight: #ffe182;
     --yellow: #FFCE35;
     --yellowhover: #ff9c35;
-  
-  
+
+
     --textblue: #182437;    /* Text Blue / Texts & buttons */
     --textbuehover: #1075BB; /* Text Blue Hover / Texts links & buttons hover */
     --darkblue: #182437; /*  Dark Blue / Bg boxes on blue bg */
@@ -19,20 +18,21 @@
     --softbluelight: #10a0bb; /* Soft Blue Light / Bg boxes on white bg */
     --mediumblue: #1067bb; /* Medium Blue / Bg boxes on white bg */
     --lightblue: #CBE9FB; /* Light Blue / Bg forms & subnav */
-  
-  
-  
+
+
+
     
     --redlight: #C6067F; 
     --red: #A80A7C; /* Red / Main menu active links */
     --redhover: #C6067F;
-  
-  
+
     --titlefont: 'Phosphate Solid', Impact, 'Arial Narrow Bold', Arial, sans-serif;
     --headingfont: 'Barlow Condensed', sans-serif;
     --sansfont: 'Barlow', sans-serif;
-  
+
     --normalweight: 400;
     --boldweight: 700;
     --borderradius: 8px;
+
+    --gap: 12px;
   }
