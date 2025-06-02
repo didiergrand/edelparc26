@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
     text-align: center;
     user-select: none;
@@ -40,7 +40,7 @@
     font-size: 12px;
     border: none;
     border-radius: 6px;
-    background: #000;
+    background: var(--black);
     color: inherit;
     pointer-events: none;
     width: 250px;
@@ -51,34 +51,34 @@
     pointer-events: auto;
   }
   .bulle.rose:hover .membres {
-    background: #8f1a58;
+    background: var(--red);
   }
   .bulle.bleu:hover .membres {
-    background: #214b82;
+    background: var(--softbluelight);
   }
   .bulle.jaune:hover .membres {
-    background: #cea10e;
+    background: var(--yellowhover);
   }
   .bulle.marine:hover .membres {
-    background: #141629;
+    background: var(--ultradarkblue);
   }
 
   /* ----------- Couleurs ----------- */
   .rose {
-    background: #BF2B7A;
+    background: var(--redlight);
   }
 
 
   .bleu {
-    background: #3C70B5;
+    background: var(--softblue);
   }
 
   .jaune {
-    background: #FECE36;
+    background: var(--yellow);
   }
 
   .marine {
-    background: #272B4D;
+    background: var(--darkblue);
   }
 
   /* ----------- Tailles (Ø) ----------- */
