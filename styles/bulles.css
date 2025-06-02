@@ -54,13 +54,13 @@
     background: var(--red);
   }
   .bulle.bleu:hover .membres {
-    background: var(--softbluelight);
+    background: var(--mediumblue);
   }
   .bulle.jaune:hover .membres {
     background: var(--yellowhover);
   }
   .bulle.marine:hover .membres {
-    background: var(--ultradarkblue);
+    background: var(--darkblue);
   }
 
   /* ----------- Couleurs ----------- */
