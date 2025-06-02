@@ -5,16 +5,16 @@
     --black: #1e1e1e;
     
     --yellowlight: #ffe559;
-    --yellow: #FFCE35;
-    --yellowhover: #ffc044;
+    --yellow: #ffc044;
+    --yellowhover: #ff882d;
 
 
     --textblue: #182437;    /* Text Blue / Texts & buttons */
     --textbuehover: #1075BB; /* Text Blue Hover / Texts links & buttons hover */
-    --darkblue: #182437; /*  Dark Blue / Bg boxes on blue bg */
+    --darkblue: #1f2f48; /*  Dark Blue / Bg boxes on blue bg */
     --ultradarkblue: #152232; /*  Ultra Dark Blue / Bg boxes on blue bg */
     --softblue: #1075BB; /* Soft Blue / Bg boxes on white bg */
-    --softbluehover: #006cab; /* Soft Blue / Bg boxes on white bg */
+    --softbluehover: #0161A3; /* Soft Blue / Bg boxes on white bg */
     --softbluelight: #008cd3; /* Soft Blue Light / Bg boxes on white bg */
     --mediumblue: #1067bb; /* Medium Blue / Bg boxes on white bg */
     --lightblue: #CBE9FB; /* Light Blue / Bg forms & subnav */
