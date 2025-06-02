@@ -473,6 +473,11 @@
     margin: 0 auto;
     padding: 20px;
   }
+  .container-xsmall {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
   sup {
     font-size: 0.6em;
