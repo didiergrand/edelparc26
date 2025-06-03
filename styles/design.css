@@ -968,6 +968,9 @@
   }
   .sub-menu{
     margin-bottom: 200px;
+    a{
+      padding: 10px 0;
+    }
   }
   
   #social{
