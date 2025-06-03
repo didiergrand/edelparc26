@@ -1586,7 +1586,7 @@
       padding: 20px;
     }
     .home .site-branding{
-      display: none;
+      visibility: hidden;
     }
   }
   @media screen and (min-width: 1000px) {
