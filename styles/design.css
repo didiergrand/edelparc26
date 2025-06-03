@@ -1623,10 +1623,10 @@
       width: calc(100% - 100px);
       margin: 50px;
     }
-    /* .home .site-branding{
+    .home .site-branding{
       visibility: hidden;
       display: none
-    } */
+    }
     .home #social img{
       filter: brightness(0) invert(1);
     }
