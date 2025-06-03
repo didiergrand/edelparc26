@@ -1585,6 +1585,9 @@
     .logohome{
       padding: 20px;
     }
+    .home .site-branding{
+      display: none;
+    }
   }
   @media screen and (min-width: 1000px) {
     .hideonmobile {
