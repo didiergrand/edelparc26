@@ -628,14 +628,9 @@
   .site,
   .single{
     background-color: var(--lightblue);
-  }
-  @media screen and (min-width: 999px) {
-    .site,
-    .single{
-      background-size: cover;
-      background-position: right bottom;
-      background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
-    }
+    background-size: cover;
+    background-position: right bottom;
+    background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
   }
   @media screen and (min-width: 999px) {
     .single-content{
