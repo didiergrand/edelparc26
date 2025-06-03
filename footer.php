@@ -25,7 +25,7 @@
     </div>
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-		74ème giron des musiques de la Veveyse | <img src="/wp-content/uploads/2023/08/dg-logo.png" height="12" width="12" style="border-radius: 0" /> webdesign &amp; code : Didier Grand - <a href="https://www.digitalgarage.ch?ref=EDELPARC26">digitalgarage.ch</a>
+		74ème giron des musiques de la Veveyse | <img src="/wp-content/themes/edelparc26/images/dg-logo.png" height="12" width="12" style="border-radius: 0" /> webdesign &amp; code : Didier Grand - <a href="https://www.digitalgarage.ch?ref=EDELPARC26">digitalgarage.ch</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

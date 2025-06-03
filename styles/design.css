@@ -733,14 +733,14 @@
   
   footer#colophon,
   footer#colophon a {
-    color: var(--softblue);
+    color: var(--white);
     font-size: 14px;
     font-weight: var(--normalweight);
-    background-color: var(--mediumblue);
+    background-color: var(--darkblue);
   }
   
   footer#colophon a:hover {
-    color: white;
+    color: var(--yellow);
   }
   
   /*--------------------------------------------------------------
