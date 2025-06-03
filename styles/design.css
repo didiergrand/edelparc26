@@ -1041,7 +1041,7 @@
   
   
   .site-main{
-    min-height: calc(100vh - 185px);
+    min-height: calc(100vh - 245px);
     margin-top: 100px 0 150px;
   }
   .home .site-main{
