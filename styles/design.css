@@ -1595,7 +1595,7 @@
     #welcome{
       /* display: grid;
       grid-template-columns: 3fr 2fr; */
-      min-height: 90vh;
+      min-height: 100vh;
       background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
       background-size: cover;
       background-position: center bottom;
