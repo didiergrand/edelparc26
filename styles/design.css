@@ -945,10 +945,10 @@
     overflow: auto;
     display: grid;
     grid-template-columns: 1fr;
-    width: 96%;
-    margin-right: 2%;
-    margin-top: 3%;
-    height: 96%;
+    width: calc(100vw - 20px);
+    margin-right: 10px;
+    margin-top: 10px;
+    height: calc(100vh - 20px);
     padding: 60px;
     max-width: 1500px;
     right: 0;
