@@ -953,6 +953,7 @@
   }
   .toggled #primary-menu li {
     grid-column: span 1;
+    padding: 5px;
   }
   
   .toggled #primary-menu li.social {
