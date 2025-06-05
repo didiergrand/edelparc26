@@ -946,10 +946,13 @@
     display: grid;
     grid-template-columns: 1fr;
     width: 96%;
-    margin-left: 2%;
+    margin-right: 2%;
     margin-top: 3%;
-    height: 90%;
+    height: 96%;
     padding: 60px;
+    max-width: 1500px;
+    right: 0;
+    margin-left: auto;
   }
   .toggled #primary-menu li {
     grid-column: span 1;
