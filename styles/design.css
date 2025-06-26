@@ -752,6 +752,10 @@
     grid-area: nav;
     display: flex;
     justify-content: end;
+    @media screen and (max-width:998px){
+      min-width: 100vw;
+      height: 100px;
+    }
   }
   
   .main-navigation ul {
@@ -919,6 +923,7 @@
     transition: all .5s ease-in-out;
   }
   @media screen and (min-width: 768px) {
+
   
     .main-navigation .burger{
       padding: 15px 20px;
@@ -1041,11 +1046,11 @@
     transition: 0.4s;
   }
   .site-main{
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 245px);
   }
   @media screen and (max-width:998px){
     .site-main{
-      min-height: calc(100vh - 245px);
+      min-height: calc(100vh - 50px);
       margin-top: 100px 0 150px;
     }
   }
