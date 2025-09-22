@@ -1639,7 +1639,6 @@
     .home .site-branding .home-logo,
     .home .site-branding .home-baseline{
       visibility: hidden;
-      display: none
     }
     .home #social img{
       filter: brightness(0) invert(1);
