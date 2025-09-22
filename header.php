@@ -61,28 +61,27 @@
 				?>
 				<p class="site-description"><?php echo $EDELPARC26_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-					<div class="menu-label">
-						<span class="close-menu">Fermer le menu</span>
-						<span class="open-menu">Menu</span>
-					</div>
-					<div class="burger">
-						<div class="bar1"></div>
-					<div class="bar2"></div>
-					<div class="bar3"></div>
-					</div>
-				</button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
 		</div><!-- .site-branding -->
 
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<div class="menu-label">
+					<span class="close-menu">Fermer le menu</span>
+					<span class="open-menu">Menu</span>
+				</div>
+				<div class="burger">
+					<div class="bar1"></div>
+				  <div class="bar2"></div>
+				  <div class="bar3"></div>
+				</div>
+			</button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
