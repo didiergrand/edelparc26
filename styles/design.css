@@ -1636,7 +1636,8 @@
       width: calc(100% - 100px);
       margin: 50px;
     }
-    .home .site-branding{
+    .home .site-branding .home-logo,
+    .home .site-branding .home-baseline{
       visibility: hidden;
       display: none
     }
