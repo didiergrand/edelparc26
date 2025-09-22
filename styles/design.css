@@ -426,7 +426,6 @@
   
   
   #masthead {
-    display: grid;
     margin: 0 auto;
     /* center vertically */
     align-items: center;
@@ -449,7 +448,10 @@
     gap: 0 20px;
   }
   @media screen and (max-width:998px){
-    #masthead .site-branding{
+    #masthead .site-branding img.home-logo{
+      display: block;
+    }
+    #masthead .site-branding img.home-baseline{
       display: none;
     }
     #masthead .site-branding img {
@@ -459,8 +461,6 @@
   @media screen and (min-width: 999px){
     
     #masthead .site-branding {
-      display: grid;
-      grid-template-columns: 240px 1fr;
       align-items: center;
       grid-area: logo;
     }
@@ -754,6 +754,7 @@
     @media screen and (max-width:998px){
       min-width: 100vw;
       height: 100px;
+      position: absolute;
     }
   }
   
@@ -915,7 +916,7 @@
     position: relative;
     z-index: 99;
     transition: all .1s ease-in-out;
-    padding: 0;
+    padding: 90px 60px;
     right: 24px;
   }
   .toggled .menu-toggle {
@@ -1594,7 +1595,7 @@
     .logohome{
       padding: 20px;
     }
-    .home .site-branding{
+    .home #masthead .site-branding{
       visibility: hidden;
     }
   }
