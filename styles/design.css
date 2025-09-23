@@ -755,7 +755,7 @@
     justify-content: end;
     height: 100px;
     position: absolute;
-    right: 50px;
+    right: 0;
   }
   
   .main-navigation ul {
@@ -765,20 +765,20 @@
     padding-left: 0;
 
   }
-  
-    .main-navigation ul {
-      width: 100%;
-      background-color: var(--darkblue);
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-    }
-  
-    .main-navigation #primary-menu {
-      padding: 100px 0;
-    }
-  
+
+  .main-navigation ul {
+    width: 100%;
+    background-color: var(--darkblue);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+
+  .main-navigation #primary-menu {
+    padding: 100px 0;
+  }
+
   
   .main-navigation ul ul li:hover>ul,
   .main-navigation ul ul li.focus>ul {
@@ -923,8 +923,9 @@
     transition: all .5s ease-in-out;
   }
   @media screen and (min-width: 768px) {
-
-  
+    .main-navigation{
+      right: 50px;
+    }
     .main-navigation .burger{
       padding: 15px 20px;
     }
