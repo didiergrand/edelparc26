@@ -1873,3 +1873,9 @@
             "content";
     }
 }
+iframe{
+  max-height: 90vh;
+  width: 100%;
+  border: 0;
+  border-radius: var(--borderradius);
+}
