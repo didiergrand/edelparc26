@@ -1875,18 +1875,10 @@ iframe{
   border: 0;
   border-radius: var(--borderradius);
 }
-.sponsors-footer{
+.sponsors-f{
   background-color: var(--white);
   img{
     width: 100%;
     height: auto;
-  }
-}
-@media screen and (min-width: 768px) {
-  .sponsors-footer{
-    img{
-      width: 100%;
-      height: auto;
-    }
   }
 }
