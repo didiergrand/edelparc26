@@ -1046,12 +1046,8 @@
     -o-transition: 0.4s;
     transition: 0.4s;
   }
-  .site-main{
-    min-height: calc(100vh - 245px);
-  }
   @media screen and (max-width:998px){
     .site-main{
-      min-height: calc(100vh - 50px);
       margin-top: 100px 0 150px;
     }
     .home .site-main{
@@ -1615,7 +1611,7 @@
     #welcome{
       /* display: grid;
       grid-template-columns: 3fr 2fr; */
-      min-height: 100vh;
+      min-height: calc(100vh - 270px);
       background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
       background-size: cover;
       background-position: center bottom;
@@ -1628,7 +1624,7 @@
       padding: 20px;
       flex-direction: column;
       img{  
-        max-width: 700px;
+        max-width: 500px;
       }
       .home-baseline{
         max-width: 600px;
@@ -1878,4 +1874,19 @@ iframe{
   width: 100%;
   border: 0;
   border-radius: var(--borderradius);
+}
+.sponsors-footer{
+  background-color: var(--white);
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sponsors-footer{
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
 }
