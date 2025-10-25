@@ -1624,7 +1624,9 @@
       padding: 20px;
       flex-direction: column;
       img{  
-        max-width: 500px;
+        max-width: calc(100% - 20px);
+        max-height: calc(100vh - 400px);
+        object-fit: contain;
       }
       .home-baseline{
         max-width: 600px;
