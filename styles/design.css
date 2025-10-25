@@ -1881,10 +1881,14 @@ iframe{
 }
 .sponsors-f{
   background-color: var(--white);
-  height: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .sponsors-f{
+    height: 230px;
+  }
 }
 .desktop{
   display: block;
