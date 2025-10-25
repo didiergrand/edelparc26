@@ -1611,7 +1611,7 @@
     #welcome{
       /* display: grid;
       grid-template-columns: 3fr 2fr; */
-      min-height: calc(100vh - 270px);
+      min-height: calc(100vh - 275px);
       background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
       background-size: cover;
       background-position: center bottom;
@@ -1877,8 +1877,8 @@ iframe{
 }
 .sponsors-f{
   background-color: var(--white);
-  img{
-    width: 100%;
-    height: auto;
-  }
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
