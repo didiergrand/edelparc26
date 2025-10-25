@@ -25,8 +25,8 @@
     </div>
 	<div class="sponsors-f">
 		<div class="container">
-			<img src="/wp-content/themes/edelparc26/images/bandeaux-sponsors-princ-EDELPARC_11-sponsors-principaux-couleleur.png" alt="Sponsors" class="desktop" />
-			<img src="/wp-content/themes/edelparc26/images/bandeaux-sponsors-princ-EDELPARC_11-sponsors-principaux-coulemobile.png" alt="Sponsors" class="mobile" />
+			<img src="/wp-content/themes/edelparc26/images/bandeaux-sponsors-princ-EDELPARC_11-sponsors-principaux-couleur.png" alt="Sponsors" class="desktop" />
+			<img src="/wp-content/themes/edelparc26/images/bandeaux-sponsors-princ-EDELPARC_11-sponsors-principaux-couleur-mobile.png" alt="Sponsors" class="mobile" />
 		</div>
 	</div>
 	<footer id="colophon" class="site-footer">
