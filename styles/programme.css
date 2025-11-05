@@ -130,8 +130,8 @@
       }
       .ep26-entry.is-yellow{
         background: var(--yellowlight);
-        border-color: var(--yellow);
-        color: var(--yellow);
+        border-color: var(--darkyellow);
+        color: var(--darkyellow);
         font-weight: 800;
       }
     
