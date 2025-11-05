@@ -48,3 +48,110 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
+
+
+
+      .ep26-timeline{
+        --bg: #ffffff;
+        --text: #111;
+        --muted: #666;
+        --border: #d9d9e0;
+    
+        --header-bg:#3f3f46; /* gris foncé */
+        --header-text:#fff;
+    
+        --card-outline-bg:#fff;
+        --card-outline-border:#cfcfd8;
+    
+        --card-green-bg:#e8f7f1;
+        --card-green-text:#166534; /* vert foncé */
+    
+        --card-blue-bg:#e9f1ff;
+        --card-blue-text:#1e3a8a; /* bleu foncé */
+        --card-blue-border:#3b82f6;
+    
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--text);
+        line-height: 1.45;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .ep26-card{
+        background: var(--header-bg);
+        color: var(--header-text);
+        border-radius: 16px;
+        padding: 16px 20px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 6px 24px rgba(0,0,0,.12) inset;
+        margin-bottom: 18px;
+        text-align: center;
+      }
+      .ep26-card h2{
+        font-size: 1.35rem;
+        line-height: 1.2;
+        margin: 0 0 2px 0;
+        font-weight: 700;
+      }
+      .ep26-card p{
+        margin: 0;
+        opacity: .9;
+        font-size: .95rem;
+      }
+    
+      /* grille timeline */
+      .ep26-items{
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 10px 14px;
+        align-items: start;
+      }
+      .ep26-time{
+        font-variant-numeric: tabular-nums;
+        font-weight: 800;
+        text-align: right;
+        padding-top: 12px;
+        color: var(--text);
+      }
+    
+      .ep26-entry{
+        border-radius: 14px;
+        padding: 14px 18px;
+        background: var(--card-outline-bg);
+        border: 2px solid var(--card-outline-border);
+        box-shadow: 0 2px 0 rgba(0,0,0,.02);
+      }
+      .ep26-entry p{ margin: 0; }
+      .ep26-entry .title{
+        font-weight: 700;
+        margin: 0;
+      }
+      .ep26-entry .subtitle{
+        margin: 2px 0 0 0;
+        color: var(--muted);
+        font-weight: 600;
+      }
+    
+      /* Variantes */
+      .ep26-entry.is-green{
+        background: var(--card-green-bg);
+        border-color: transparent;
+        color: var(--card-green-text);
+        font-weight: 800;
+      }
+      .ep26-entry.is-blue{
+        background: var(--card-blue-bg);
+        border-color: var(--card-blue-border);
+        color: var(--card-blue-text);
+        font-weight: 700;
+      }
+    
+      /* Responsive */
+      @media (max-width: 520px){
+        .ep26-items{ grid-template-columns: 1fr; }
+        .ep26-time{
+          text-align: left;
+          padding-top: 0;
+          color: var(--muted);
+          font-weight: 700;
+        }
+        .ep26-time::after{ content:""; display:block; height:6px; }
+      }
