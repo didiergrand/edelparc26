@@ -123,7 +123,7 @@
         font-weight: 700;
       }
       .ep26-entry.is-red{
-        background: var(--redlight);
+        background: var(--redlightest);
         border-color: var(--red);
         color: var(--red);
         font-weight: 800;
