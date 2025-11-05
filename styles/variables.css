@@ -20,12 +20,14 @@
     --mediumblue: #1067bb; /* Medium Blue / Bg boxes on white bg */
     --lightblue: #CBE9FB; /* Light Blue / Bg forms & subnav */
 
-
-
-    
     --redlight: #C6067F; 
     --red: #A80A7C; /* Red / Main menu active links */
     --redhover: #C6067F;
+
+    --greenlight: #E8F7F1;
+    --green: #166534;
+    --greenhover: #167534;
+    --greendark: #164534;
 
     --titlefont: 'Phosphate Solid', Impact, 'Arial Narrow Bold', Arial, sans-serif;
     --headingfont: 'Barlow Condensed', sans-serif;
