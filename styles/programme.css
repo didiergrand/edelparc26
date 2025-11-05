@@ -112,7 +112,7 @@
       /* Variantes */
       .ep26-entry.is-green{
         background: var(--greenlight);
-        border-color: transparent;
+        border-color: var(--green);
         color: var(--green);
         font-weight: 800;
       }
