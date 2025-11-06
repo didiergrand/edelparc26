@@ -98,7 +98,6 @@
         border: 2px solid var(--lightblue);
         box-shadow: 0 2px 0 rgba(0,0,0,.02);
       }
-      .ep26-entry p{ margin: 0; }
       .ep26-entry .title{
         font-weight: 700;
         margin: 0;

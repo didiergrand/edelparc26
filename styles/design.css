@@ -98,8 +98,8 @@
   }
   
   h4 {
-    letter-spacing: 1px;
     font-weight: var(--boldweight);
+    font-size: 1.5rem;
   }
   
   p {
