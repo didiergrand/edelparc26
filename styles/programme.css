@@ -124,8 +124,8 @@
       }
       .ep26-entry.is-yellow{
         background: var(--yellowlight);
-        border-color: var(--darkestyellow);
-        color: var(--darkestyellow);
+        border-color: var(--darkeryellow);
+        color: var(--darkeyellow);
       }
     
       /* Responsive */
