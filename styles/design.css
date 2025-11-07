@@ -300,6 +300,11 @@
   
   /* Forms
   --------------------------------------------- */
+
+
+
+
+
   button,
   input[type="button"],
   input[type="reset"],
@@ -308,13 +313,13 @@
   .wp-element-button{
     border: 0;
     border-radius: var(--borderradius);
-    background-color: var(--softblue);
+    font-family: var(--headingfont);
+    background-color: var(--red);
     color: var(--white);
     line-height: 1;
     padding: 20px 26px;
     text-transform: uppercase;
     font-size: 14px;
-    font-family: var(--sansfont);
     font-weight: var(--normalweight);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -336,7 +341,7 @@
   .site-main .wp-block-button__link:hover,
   .wp-element-button:hover {
     color: var(--white);
-    background-color: var(--softbluehover);
+    background-color: var(--redhover);
   }
   .wp-block-file__button{
     padding: 10px 16px;
@@ -344,12 +349,13 @@
   .wp-block-file:not(.wp-element-button){
       font-size:1em;
   }
-  .site-main .btn-important .wp-block-button__link {
-    background: var(--red);
+
+.btn-xl{
+  .site-main .wp-block-button__link,
+  .site-main .wp-element-button{
+    font-size: large;
   }
-  .site-main .btn-important .wp-block-button__link:hover {
-    background: var(--redhover);
-  }
+}
   
   input[type="text"],
   input[type="email"],
@@ -1903,12 +1909,4 @@ iframe{
   .mobile{
     display: block;
   }
-}
-.btn{
-  font-family: var(--headingfont);
-  background-color: var(--red);
-  color: var(--white);
-}
-.btn .btn-xl{
-  font-size: large;
 }
