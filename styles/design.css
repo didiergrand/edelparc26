@@ -944,6 +944,9 @@
     .home .menu-toggle {
       right: 424px;
     }
+    .toggled .menu-toggle {
+      right: 24px;
+    }
   }
   
   .toggled .close-menu {
