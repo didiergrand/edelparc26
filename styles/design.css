@@ -1058,6 +1058,7 @@
       margin-top: 100px 0 150px;
     }
     .home .site-main{
+      display: block;
       position: relative;
       top: -100px;
     }
