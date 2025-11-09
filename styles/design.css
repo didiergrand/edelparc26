@@ -922,10 +922,9 @@
     right: 24px;
   }
   .home .menu-toggle {
-    right: 424px;
+    right: 24px;
   }
   .toggled .menu-toggle {
-    transition: all .5s ease-in-out;
     right: 24px;
   }
   @media screen and (min-width: 768px) {
@@ -941,6 +940,9 @@
     .main-navigation .burger{
       width: 70px;
       height: 70px;
+    }
+    .home .menu-toggle {
+      right: 424px;
     }
   }
   
