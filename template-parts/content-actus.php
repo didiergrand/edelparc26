@@ -50,30 +50,8 @@
 			</header>
 		</a>
 		<?php endif; ?>
-
-
 		<?php
-			the_excerpt();
+			the_content();
 		?>
-		<div style="text-align:center">
-		<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
-			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>" class="btn btn-primary">
-			<?php if( get_post_meta($post->ID, "custom_link_text", true) ): ?>
-					<?php echo get_post_meta( get_the_ID(), 'custom_link_text', true ); ?>
-				<?php else: ?>
-					Lire la suite
-				<?php endif; ?>
-			</a>
-		<?php else: ?>
-		<!-- something can go here if you don't have the custom field, but it's optional -->
-			<a href="<?php the_permalink(); ?>" class="btn btn-primary">
-				<?php if( get_post_meta($post->ID, "custom_link_text", true) ): ?>
-					<?php echo get_post_meta( get_the_ID(), 'custom_link_text', true ); ?>
-				<?php else: ?>
-					Lire la suite
-				<?php endif; ?>
-			</a>
-		<?php endif; ?>   
-				</div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

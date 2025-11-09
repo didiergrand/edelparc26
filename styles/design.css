@@ -604,7 +604,7 @@
   }
   
   #actus article{
-    background-color: var(--red);
+    background-color: var(--darkblue);
     margin-bottom: 2rem;
   }
   #actus article .home_actus-content{
@@ -624,6 +624,7 @@
     h4{
       color: var(--white);
       font-weight: bold;
+      margin: 0;
     }
     p{
       color: var(--white);
