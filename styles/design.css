@@ -578,10 +578,9 @@
     background-color: transparent;
   }
   #actus{
-    background-color:var(--mediumblue);
+    background-color:var(--lightblue);
     background-size: cover;
     background-position: right;
-    background-image: url('/wp-content/themes/edelparc26/images/bg-train.jpg');
     a{
       text-decoration: none;
     }
@@ -589,7 +588,7 @@
   
   @media screen and (min-width: 999px) {
     #actus{
-      padding: 50px 0;
+      padding: 150px 0 0 0;
     }
   }
   @media screen and (min-width: 999px) {
@@ -1648,7 +1647,7 @@
       max-width: none;
       width: calc(100% - 20px);
       margin: 35px 10px;
-      height: 200px
+      height: 100px
     }
     .home #masthead .site-branding{
       visibility: hidden;
