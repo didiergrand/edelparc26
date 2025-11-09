@@ -71,9 +71,6 @@
     font-family: var(--titlefont);
 
   }
-  article.post, article.page{
-    padding-bottom: 200px;
-  }
   .background-title{
       margin: 20px 0;
   }
@@ -1052,6 +1049,9 @@
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
+  }
+  .home .site-main{
+    display: flex;
   }
   @media screen and (max-width:998px){
     .site-main{
