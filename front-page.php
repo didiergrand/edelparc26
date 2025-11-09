@@ -37,7 +37,7 @@ $q2 = new WP_Query($args2);
 if ($q2->have_posts()) {
     ?>
     <section id="actus">
-        <h2>Dernières actualités</h2>
+        <h3>Dernières actualités</h3>
         <div class="container">
             <?php
             while ($q2->have_posts()) {

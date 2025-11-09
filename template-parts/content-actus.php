@@ -37,7 +37,7 @@
 	<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
 			<a href="<?php echo get_post_meta( get_the_ID(), 'custom_link', true ); ?>">			<header class="entry-header">
 				<?php
-				the_title( '<h3 class="entry-title">', '</h3>' );
+				the_title( '<h4 class="entry-title">', '</h4>' );
 				?>
 			</header></a>
 		<?php else: ?>
@@ -45,7 +45,7 @@
 		<a href="<?php the_permalink(); ?>">
 			<header class="entry-header">
 				<?php
-				the_title( '<h3 class="entry-title">', '</h3>' );
+				the_title( '<h4 class="entry-title">', '</h4>' );
 				?>
 			</header>
 		</a>
