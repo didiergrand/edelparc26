@@ -590,6 +590,7 @@
     #actus{
       padding: 150px 0 0 0;
       max-width: 400px;
+      min-width: 400px;
     }
   }
   @media screen and (min-width: 999px) {
@@ -941,6 +942,8 @@
       width: 70px;
       height: 70px;
     }
+  }
+  @media screen and (min-width: 999px) {
     .home .menu-toggle {
       right: 424px;
     }
