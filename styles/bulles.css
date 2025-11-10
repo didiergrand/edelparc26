@@ -50,14 +50,14 @@
   }
 
 @media screen and (min-width: 768px) {
-  #scene {
+  body.has-bubble-mode #scene {
     position: relative;
     width: 100%;
     height: 2200px;
   }
 
   /* ----------- Ballons / bulles ----------- */
-  .bulle {
+  body.has-bubble-mode .bulle {
     position: absolute;
     border-radius: 50%;
     display: flex;
@@ -72,13 +72,13 @@
     will-change: transform;
   }
 
-  .bulle:hover {
+  body.has-bubble-mode .bulle:hover {
     transform: scale(1.08);
     z-index: 10000;
   }
 
   /* Texte + bouton (apparait au sur‑vol) */
-  .bulle .membres {
+  body.has-bubble-mode .bulle .membres {
     position: absolute;
     top: 160px;
     left: 50%;
@@ -95,42 +95,55 @@
     width: 250px;
   }
 
-  .bulle:hover .membres {
+  body.has-bubble-mode .bulle:hover .membres {
     opacity: 1;
     pointer-events: auto;
   }
-  .bulle.rose:hover .membres {
+  body.has-bubble-mode .bulle.rose:hover .membres {
     background: var(--red);
   }
-  .bulle.bleu:hover .membres {
+  body.has-bubble-mode .bulle.bleu:hover .membres {
     background: var(--mediumblue);
   }
-  .bulle.jaune:hover .membres {
+  body.has-bubble-mode .bulle.jaune:hover .membres {
     background: var(--yellowhover);
   }
-  .bulle.marine:hover .membres {
+  body.has-bubble-mode .bulle.marine:hover .membres {
     background: var(--darkblue);
   }
 
 
 
   /* ----------- Tailles (Ø) ----------- */
-  .petit {
+  body.has-bubble-mode .petit {
     width: 180px;
     height: 180px;
     font-size: 14px;
   }
 
-  .moyen {
+  body.has-bubble-mode .moyen {
     width: 240px;
     height: 240px;
     font-size: 16px;
   }
 
-  .grand {
+  body.has-bubble-mode .grand {
     width: 360px;
     height: 360px;
     font-size: 18px;
+  }
+
+  body:not(.has-bubble-mode) #controls button[data-filter] {
+    display: none;
+  }
+
+}
+@media screen and (min-width: 999px) {
+  body:not(.has-bubble-mode) #scene {
+    display: grid
+;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 }
   /* ----------- Effet d’explosion (lors du masquage) ----------- */
@@ -147,8 +160,8 @@
 
   /* ----------- Panneau de contrôle ----------- */
   #controls {
-    display: flex;
-    gap: 6px
+    display: none; /* Masqué par défaut, affiché par JS si #scene existe */
+    gap: 6px;
   }
 
   #controls button {
@@ -157,6 +170,10 @@
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold
+  }
+
+  #controls .mode-toggle[disabled] {
+    cursor: not-allowed;
   }
 
   #controls .off {
@@ -168,7 +185,7 @@
     outline: 2px solid #0004;
   }
   @media screen and (min-width: 999px) {
-    #scene {
+    body.has-bubble-mode #scene {
         height: 1000px;
     }
 }
