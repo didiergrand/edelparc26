@@ -945,7 +945,9 @@
   }
   @media screen and (min-width: 999px) {
     .home .menu-toggle {
-      right: 24px;
+      /* right: 24px;  remove 400px if we don't have news      */
+      right: 424px;
+
     }
     .toggled .menu-toggle {
       right: 24px;
