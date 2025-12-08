@@ -1645,6 +1645,7 @@
       flex-direction: column;
       img{  
         max-width: calc(100% - 20px);
+        max-height: 700px;
         object-fit: contain;
       }
       .home-baseline{
