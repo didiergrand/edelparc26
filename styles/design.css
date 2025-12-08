@@ -944,13 +944,13 @@
     }
   }
   @media screen and (min-width: 999px) {
-    .home .menu-toggle {
+    .home .main-navigation {
       /* right: 24px;  remove 400px if we don't have news      */
-      right: 424px;
+      right: 450px;
 
     }
-    .toggled .menu-toggle {
-      right: 24px;
+    .home .main-navigation.toggled {
+      right: 50px;
     }
   }
   
@@ -1645,7 +1645,6 @@
       flex-direction: column;
       img{  
         max-width: calc(100% - 20px);
-        max-height: calc(100vh - 400px);
         object-fit: contain;
       }
       .home-baseline{
