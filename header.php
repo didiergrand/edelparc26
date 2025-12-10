@@ -95,6 +95,14 @@
 				  <div class="bar3"></div>
 				</div>
 			</button>
+			<div id="social">
+				<a href="https://www.instagram.com/edelparc26/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="EDELPARC26 Instagram" class="instagram" width="24" height="24">
+				</a>
+				<a href="https://www.facebook.com/edelparc26/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="EDELPARC26 Facebook" class="facebook" width="24" height="24">
+				</a>
+			</div>
 			<?php
 			wp_nav_menu(
 				array(
