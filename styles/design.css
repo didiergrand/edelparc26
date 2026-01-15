@@ -1925,3 +1925,7 @@ iframe{
     display: block;
   }
 }
+.presentation{
+  position: absolute;
+  top: -1000px;
+}

@@ -51,7 +51,10 @@ if ($q2->have_posts()) {
     <?php
 }
 ?>
-
+        <div class="presentation">
+        <p>Du 21 au 24 mai 2026, le village de Semsales accueillera pour la 8e fois le Giron des musiques de la Veveyse, organisé par la fanfare l’Edelweiss. Cet événement, nommé EDEL’PARC 26, promet d’offrir à la région une fête des musiques hors du commun, sous le slogan évocateur : «Sensations musicales garanties».</p>
+        <p>EDEL’PARC, inspiré de l’ambiance festive et chaleureuse des parcs d’attraction, vise à créer des moments simples et rassembleurs. En mettant à l’honneur toutes les générations, cette fête accorde une place toute particulière aux enfants en leur offrant un programme personnalisé qui contribuera à forger des souvenirs magiques et enrichissants.</p>
+        </div>
 
 	</main><!-- #main -->
 
