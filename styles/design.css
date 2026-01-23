@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Phosphate Solid";
-  src: url('../fonts/PhosphateSolid.woff2') format('woff2');
-}
-
-@font-face {
   font-family: "Barlow";
   src: url('../fonts/Barlow-Regular.woff2') format('woff2');
   font-weight: 400;
