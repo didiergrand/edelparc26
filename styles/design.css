@@ -627,6 +627,80 @@
       color: var(--white);
     }
   }
+
+  /* ---- Giron Veveyse - Page template ---- */
+  .page-giron-veveyse .giron-intro {
+    padding: 2rem 0;
+  }
+
+  #giron-cards {
+    padding: 2rem 0 4rem 0;
+  }
+
+  #giron-cards .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    #giron-cards .cards-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 999px) {
+    #giron-cards .cards-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  #giron-cards article {
+    background-color: var(--darkblue);
+    margin-bottom: 0;
+    border-radius: var(--borderradius);
+    overflow: hidden;
+  }
+
+  #giron-cards article a {
+    text-decoration: none;
+  }
+
+  #giron-cards article .home_actus-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #giron-cards article .home_actus-content {
+    font-size: 1rem;
+    font-weight: var(--normalweight);
+    padding: 20px 40px 40px 40px;
+    margin: 0;
+  }
+
+  #giron-cards article .home_actus-content .subtitle {
+    font-size: 21px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--yellow);
+    font-family: var(--headingfont);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  #giron-cards article .home_actus-content h4 {
+    color: var(--white);
+    font-weight: bold;
+    margin: 0;
+  }
+
+  #giron-cards article .home_actus-content p {
+    color: var(--white);
+  }
+  /* ---- End Giron Veveyse ---- */
+
   .site,
   .single{
     background-color: var(--lightblue);
