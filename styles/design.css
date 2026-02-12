@@ -699,6 +699,27 @@
   #giron-cards article .home_actus-content p {
     color: var(--white);
   }
+
+  #giron-cards article .card-link,
+  #actus article .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 8px 20px;
+    background-color: var(--yellow);
+    color: var(--textblue);
+    font-family: var(--headingfont);
+    font-weight: var(--boldweight);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: var(--borderradius);
+    transition: background-color 0.2s ease;
+  }
+
+  #giron-cards article .card-link:hover,
+  #actus article .card-link:hover {
+    background-color: var(--yellowhover);
+  }
   /* ---- End Giron Veveyse ---- */
 
   .site,

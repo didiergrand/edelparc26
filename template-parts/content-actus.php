@@ -53,5 +53,8 @@
 		<?php
 			the_content();
 		?>
+		<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
+			<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'custom_link', true ) ); ?>" class="card-link">En savoir plus</a>
+		<?php endif; ?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
