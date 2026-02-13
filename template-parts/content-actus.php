@@ -53,8 +53,13 @@
 		<?php
 			the_content();
 		?>
-		<?php if( get_post_meta($post->ID, "custom_link", true) ): ?>
-			<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'custom_link', true ) ); ?>" class="card-link">En savoir plus</a>
+		<?php if( get_post_meta($post->ID, "custom_link", true) ): 
+			$link_text = get_post_meta( get_the_ID(), 'custom_link_text', true );
+			if ( empty( $link_text ) ) {
+				$link_text = 'En savoir plus';
+			}
+		?>
+			<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'custom_link', true ) ); ?>" class="card-link"><?php echo esc_html( $link_text ); ?></a>
 		<?php endif; ?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
