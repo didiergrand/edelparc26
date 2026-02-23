@@ -2022,3 +2022,9 @@ iframe{
   position: absolute;
   top: -1000px;
 }
+.wp-block-gallery.has-nested-images figure.wp-block-image{
+  padding: 16px;
+}
+figure.wp-block-gallery.has-nested-images {
+  border-radius: 8px;
+}
