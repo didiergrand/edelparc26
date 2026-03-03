@@ -701,11 +701,9 @@
 
   .page-giron-veveyse .giron-intro {
     padding: 2rem 0;
-    background-color: #eceff3;
   }
 
   .page-giron-veveyse .giron-intro p {
-    text-align: center;
     font-size: 1.15rem;
     line-height: 1.6;
     color: var(--textblue);
@@ -713,6 +711,7 @@
 
   #giron-cards {
     padding: 2rem 0 4rem 0;
+    background-color: #eceff3;
   }
 
   #giron-cards .cards-grid {
@@ -872,6 +871,9 @@
     line-height: 1.05;
     color: var(--darkblue);
     text-decoration: none;
+  }
+  .wp-block-latest-posts__list .wp-block-latest-posts__post-full-content {
+    margin: 22px 22px 0 22px;
   }
 
   .wp-block-latest-posts__list .wp-block-latest-posts__post-title:hover {
