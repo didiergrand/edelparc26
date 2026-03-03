@@ -260,6 +260,16 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 			$post_id = (int) $matches[1];
 		}
 
+		// Fallback: Latest Posts markup often has no post-{id} class.
+		// Resolve post ID from the first permalink found in the list item.
+		if ( ! $post_id ) {
+			$first_link = $xpath->query( './/a[@href]', $item );
+			if ( $first_link && $first_link->length > 0 ) {
+				$href    = $first_link->item(0)->getAttribute( 'href' );
+				$post_id = url_to_postid( $href );
+			}
+		}
+
 		if ( ! $post_id ) {
 			continue;
 		}
