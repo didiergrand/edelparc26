@@ -264,16 +264,73 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 			continue;
 		}
 
+		// Convert title links to plain text so only the CTA remains clickable.
+		$title_links = $xpath->query( './/a[contains(concat(" ", normalize-space(@class), " "), " wp-block-latest-posts__post-title ")]', $item );
+		if ( $title_links && $title_links->length > 0 ) {
+			$links_to_replace = array();
+			foreach ( $title_links as $title_link ) {
+				$links_to_replace[] = $title_link;
+			}
+
+			foreach ( $links_to_replace as $title_link ) {
+				$title_text = $document->createElement( 'span' );
+
+				if ( $title_link->hasAttributes() ) {
+					foreach ( $title_link->attributes as $attribute ) {
+						if ( 'href' !== $attribute->nodeName ) {
+							$title_text->setAttribute( $attribute->nodeName, $attribute->nodeValue );
+						}
+					}
+				}
+
+				while ( $title_link->firstChild ) {
+					$title_text->appendChild( $title_link->firstChild );
+				}
+
+				$title_link->parentNode->replaceChild( $title_text, $title_link );
+			}
+		}
+
+		// Remove all other links (image/permalink) from the card.
+		$other_links = $xpath->query( './/a[not(contains(@class,"latest-posts-read-more"))]', $item );
+		if ( $other_links && $other_links->length > 0 ) {
+			$links_to_unwrap = array();
+			foreach ( $other_links as $other_link ) {
+				$links_to_unwrap[] = $other_link;
+			}
+
+			foreach ( $links_to_unwrap as $other_link ) {
+				$parent = $other_link->parentNode;
+				if ( ! $parent ) {
+					continue;
+				}
+
+				while ( $other_link->firstChild ) {
+					$parent->insertBefore( $other_link->firstChild, $other_link );
+				}
+
+				$parent->removeChild( $other_link );
+			}
+		}
+
+		// Remove existing injected button, then re-insert one consistently.
 		$existing_button = $xpath->query( './/a[contains(@class,"latest-posts-read-more")]', $item );
 		if ( $existing_button && $existing_button->length > 0 ) {
-			continue;
+			$buttons_to_remove = array();
+			foreach ( $existing_button as $button_node ) {
+				$buttons_to_remove[] = $button_node;
+			}
+
+			foreach ( $buttons_to_remove as $button_node ) {
+				$button_node->parentNode->removeChild( $button_node );
+			}
 		}
 
 		$button_url  = get_post_meta( $post_id, 'custom_link', true );
 		$button_text = get_post_meta( $post_id, 'custom_link_text', true );
 
 		if ( empty( $button_url ) ) {
-			$button_url = get_permalink( $post_id );
+			continue;
 		}
 
 		if ( empty( $button_text ) ) {
@@ -284,7 +341,21 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 		$button->setAttribute( 'href', esc_url( $button_url ) );
 		$button->setAttribute( 'class', 'latest-posts-read-more card-link' );
 
-		$item->appendChild( $button );
+		$title_node = $xpath->query( './/*[contains(concat(" ", normalize-space(@class), " "), " wp-block-latest-posts__post-title ")]', $item );
+		if ( $title_node && $title_node->length > 0 ) {
+			$first_title = $title_node->item(0);
+			$title_parent = $first_title->parentNode;
+
+			if ( $title_parent && $first_title->nextSibling ) {
+				$title_parent->insertBefore( $button, $first_title->nextSibling );
+			} elseif ( $title_parent ) {
+				$title_parent->appendChild( $button );
+			} else {
+				$item->appendChild( $button );
+			}
+		} else {
+			$item->appendChild( $button );
+		}
 	}
 
 	$wrapper = $document->getElementById( 'edelparc26-latest-posts-wrapper' );

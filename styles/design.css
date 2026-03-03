@@ -802,10 +802,8 @@
   }
 
   .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt {
-    margin: 16px 22px 0 22px;
+    margin: 16px 22px;
     color: var(--textblue);
-    font-size: 1.35rem;
-    line-height: 1.55;
   }
 
   .wp-block-latest-posts__list .latest-posts-read-more {
