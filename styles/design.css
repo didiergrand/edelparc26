@@ -702,7 +702,8 @@
   }
 
   #giron-cards article .card-link,
-  #actus article .card-link {
+  #actus article .card-link,
+  .wp-block-latest-posts__list .latest-posts-read-more {
     display: inline-block;
     margin-top: 1rem;
     border: 0;
@@ -719,9 +720,97 @@
   }
 
   #giron-cards article .card-link:hover,
-  #actus article .card-link:hover {
+  #actus article .card-link:hover,
+  .wp-block-latest-posts__list .latest-posts-read-more:hover {
     color: var(--white);
     background-color: var(--redhover);
+  }
+
+  /* ---- Latest Posts as cards ---- */
+  .wp-block-latest-posts__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @media screen and (min-width: 700px) {
+    .wp-block-latest-posts__list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 999px) {
+    .wp-block-latest-posts__list {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .wp-block-latest-posts__list > li {
+    background-color: var(--white);
+    border-radius: 14px;
+    border: 1px solid rgba(24, 36, 55, 0.12);
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(24, 36, 55, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__featured-image {
+    margin: 0;
+    line-height: 0;
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__featured-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__post-date {
+    display: inline-flex;
+    align-self: flex-start;
+    margin: 22px 22px 0 22px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background-color: var(--darkblue);
+    color: var(--white);
+    font-family: var(--headingfont);
+    font-size: 1.1rem;
+    font-weight: var(--boldweight);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__post-title {
+    margin: 22px 22px 0 22px;
+    font-family: var(--headingfont);
+    font-size: 2.15rem;
+    font-weight: var(--boldweight);
+    line-height: 1.05;
+    color: var(--darkblue);
+    text-decoration: none;
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__post-title:hover {
+    color: var(--redhover);
+  }
+
+  .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt {
+    margin: 16px 22px 0 22px;
+    color: var(--textblue);
+    font-size: 1.35rem;
+    line-height: 1.55;
+  }
+
+  .wp-block-latest-posts__list .latest-posts-read-more {
+    margin: 24px 22px 22px 22px;
+    align-self: flex-start;
   }
   /* ---- End Giron Veveyse ---- */
 

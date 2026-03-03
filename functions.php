@@ -209,3 +209,97 @@ add_action( 'after_setup_theme', 'custom_header_size' );
 
 
 add_image_size( 'squared-size', 800, 800, true ); // 800 pixels wide by 600 pixels tall, hard crop mode
+
+/**
+ * Add a customizable button to each Latest Posts item.
+ *
+ * Uses post meta:
+ * - custom_link: URL override for the button target.
+ * - custom_link_text: button label override.
+ */
+function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
+	if ( empty( $block['blockName'] ) || 'core/latest-posts' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	if ( false === strpos( $block_content, 'wp-block-latest-posts__list' ) ) {
+		return $block_content;
+	}
+
+	if ( ! class_exists( 'DOMDocument' ) ) {
+		return $block_content;
+	}
+
+	libxml_use_internal_errors( true );
+
+	$document = new DOMDocument();
+	$wrapped  = '<div id="edelparc26-latest-posts-wrapper">' . $block_content . '</div>';
+	$loaded   = $document->loadHTML(
+		'<?xml encoding="utf-8" ?>' . $wrapped,
+		LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
+	);
+
+	if ( ! $loaded ) {
+		libxml_clear_errors();
+		return $block_content;
+	}
+
+	$xpath = new DOMXPath( $document );
+	$items = $xpath->query( '//ul[contains(@class,"wp-block-latest-posts__list")]/li' );
+
+	if ( ! $items ) {
+		libxml_clear_errors();
+		return $block_content;
+	}
+
+	foreach ( $items as $item ) {
+		$post_id = 0;
+		$class   = $item->getAttribute( 'class' );
+
+		if ( preg_match( '/(?:^|\s)post-(\d+)(?:\s|$)/', $class, $matches ) ) {
+			$post_id = (int) $matches[1];
+		}
+
+		if ( ! $post_id ) {
+			continue;
+		}
+
+		$existing_button = $xpath->query( './/a[contains(@class,"latest-posts-read-more")]', $item );
+		if ( $existing_button && $existing_button->length > 0 ) {
+			continue;
+		}
+
+		$button_url  = get_post_meta( $post_id, 'custom_link', true );
+		$button_text = get_post_meta( $post_id, 'custom_link_text', true );
+
+		if ( empty( $button_url ) ) {
+			$button_url = get_permalink( $post_id );
+		}
+
+		if ( empty( $button_text ) ) {
+			$button_text = 'En savoir plus';
+		}
+
+		$button = $document->createElement( 'a', esc_html( $button_text ) );
+		$button->setAttribute( 'href', esc_url( $button_url ) );
+		$button->setAttribute( 'class', 'latest-posts-read-more card-link' );
+
+		$item->appendChild( $button );
+	}
+
+	$wrapper = $document->getElementById( 'edelparc26-latest-posts-wrapper' );
+	if ( ! $wrapper ) {
+		libxml_clear_errors();
+		return $block_content;
+	}
+
+	$html = '';
+	foreach ( $wrapper->childNodes as $child ) {
+		$html .= $document->saveHTML( $child );
+	}
+
+	libxml_clear_errors();
+
+	return $html;
+}
+add_filter( 'render_block', 'edelparc26_enhance_latest_posts_block', 10, 2 );
