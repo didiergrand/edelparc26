@@ -630,8 +630,88 @@
   }
 
   /* ---- Giron Veveyse - Page template ---- */
+  .page-giron-veveyse .giron-hero {
+    position: relative;
+    min-height: 520px;
+    background-color: var(--darkblue);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .page-giron-veveyse .giron-hero__overlay {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(24, 36, 55, 0.55), rgba(24, 36, 55, 0.45));
+  }
+
+  .page-giron-veveyse .giron-hero__content {
+    text-align: center;
+    color: var(--white);
+    max-width: 900px;
+    padding: 40px 20px;
+  }
+
+  .page-giron-veveyse .giron-hero__icon {
+    margin: 0 0 10px 0;
+    color: var(--yellow);
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .page-giron-veveyse .giron-hero__title {
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(2.3rem, 8vw, 4.7rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .page-giron-veveyse .giron-hero__subtitle {
+    margin: 12px 0 0 0;
+    color: var(--yellow);
+    font-family: var(--headingfont);
+    font-weight: var(--boldweight);
+    font-size: clamp(1.2rem, 3vw, 2.1rem);
+    line-height: 1.2;
+  }
+
+  .page-giron-veveyse .giron-hero__meta {
+    margin: 12px 0 0 0;
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+    opacity: 0.95;
+  }
+
+  .page-giron-veveyse .giron-hero__button {
+    margin-top: 24px;
+    background-color: var(--yellow);
+    color: var(--textblue);
+  }
+
+  .page-giron-veveyse .giron-hero__button:hover {
+    background-color: var(--yellowhover);
+    color: var(--textblue);
+  }
+
   .page-giron-veveyse .giron-intro {
     padding: 2rem 0;
+    background-color: #eceff3;
+  }
+
+  .page-giron-veveyse .giron-intro .container {
+    max-width: 980px;
+  }
+
+  .page-giron-veveyse .giron-intro p {
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--textblue);
   }
 
   #giron-cards {
