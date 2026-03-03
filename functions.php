@@ -274,35 +274,47 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 			continue;
 		}
 
-		// Convert title links to plain text so only the CTA remains clickable.
-		$title_links = $xpath->query( './/a[contains(concat(" ", normalize-space(@class), " "), " wp-block-latest-posts__post-title ")]', $item );
-		if ( $title_links && $title_links->length > 0 ) {
-			$links_to_replace = array();
-			foreach ( $title_links as $title_link ) {
-				$links_to_replace[] = $title_link;
-			}
+		$button_url  = get_post_meta( $post_id, 'custom_link', true );
+		$button_text = get_post_meta( $post_id, 'custom_link_text', true );
 
-			foreach ( $links_to_replace as $title_link ) {
-				$title_text = $document->createElement( 'span' );
+		if ( empty( $button_url ) ) {
+			continue;
+		}
 
-				if ( $title_link->hasAttributes() ) {
-					foreach ( $title_link->attributes as $attribute ) {
-						if ( 'href' !== $attribute->nodeName ) {
-							$title_text->setAttribute( $attribute->nodeName, $attribute->nodeValue );
+		if ( empty( $button_text ) ) {
+			$button_text = 'En savoir plus';
+		}
+
+		// Keep title clickable and force it to use custom_link.
+		$title_node = $xpath->query( './/*[contains(concat(" ", normalize-space(@class), " "), " wp-block-latest-posts__post-title ")]', $item );
+		if ( $title_node && $title_node->length > 0 ) {
+			$first_title = $title_node->item(0);
+
+			if ( 'a' === strtolower( $first_title->nodeName ) ) {
+				$first_title->setAttribute( 'href', esc_url( $button_url ) );
+			} else {
+				$title_parent = $first_title->parentNode;
+				if ( $title_parent ) {
+					$title_link = $document->createElement( 'a' );
+					$title_link->setAttribute( 'href', esc_url( $button_url ) );
+
+					if ( $first_title->hasAttributes() ) {
+						foreach ( $first_title->attributes as $attribute ) {
+							$title_link->setAttribute( $attribute->nodeName, $attribute->nodeValue );
 						}
 					}
-				}
 
-				while ( $title_link->firstChild ) {
-					$title_text->appendChild( $title_link->firstChild );
-				}
+					while ( $first_title->firstChild ) {
+						$title_link->appendChild( $first_title->firstChild );
+					}
 
-				$title_link->parentNode->replaceChild( $title_text, $title_link );
+					$title_parent->replaceChild( $title_link, $first_title );
+				}
 			}
 		}
 
-		// Remove all other links (image/permalink) from the card.
-		$other_links = $xpath->query( './/a[not(contains(@class,"latest-posts-read-more"))]', $item );
+		// Remove all links except title and our CTA button.
+		$other_links = $xpath->query( './/a[not(contains(@class,"wp-block-latest-posts__post-title")) and not(contains(@class,"latest-posts-read-more"))]', $item );
 		if ( $other_links && $other_links->length > 0 ) {
 			$links_to_unwrap = array();
 			foreach ( $other_links as $other_link ) {
@@ -323,7 +335,7 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 			}
 		}
 
-		// Remove existing injected button, then re-insert one consistently.
+		// Remove existing injected button, then add it at the end of the card content.
 		$existing_button = $xpath->query( './/a[contains(@class,"latest-posts-read-more")]', $item );
 		if ( $existing_button && $existing_button->length > 0 ) {
 			$buttons_to_remove = array();
@@ -336,36 +348,10 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 			}
 		}
 
-		$button_url  = get_post_meta( $post_id, 'custom_link', true );
-		$button_text = get_post_meta( $post_id, 'custom_link_text', true );
-
-		if ( empty( $button_url ) ) {
-			continue;
-		}
-
-		if ( empty( $button_text ) ) {
-			$button_text = 'En savoir plus';
-		}
-
 		$button = $document->createElement( 'a', esc_html( $button_text ) );
 		$button->setAttribute( 'href', esc_url( $button_url ) );
 		$button->setAttribute( 'class', 'latest-posts-read-more card-link' );
-
-		$title_node = $xpath->query( './/*[contains(concat(" ", normalize-space(@class), " "), " wp-block-latest-posts__post-title ")]', $item );
-		if ( $title_node && $title_node->length > 0 ) {
-			$first_title = $title_node->item(0);
-			$title_parent = $first_title->parentNode;
-
-			if ( $title_parent && $first_title->nextSibling ) {
-				$title_parent->insertBefore( $button, $first_title->nextSibling );
-			} elseif ( $title_parent ) {
-				$title_parent->appendChild( $button );
-			} else {
-				$item->appendChild( $button );
-			}
-		} else {
-			$item->appendChild( $button );
-		}
+		$item->appendChild( $button );
 	}
 
 	$wrapper = $document->getElementById( 'edelparc26-latest-posts-wrapper' );
