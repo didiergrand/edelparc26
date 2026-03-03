@@ -667,6 +667,7 @@
     font-size: clamp(2.3rem, 8vw, 4.7rem);
     line-height: 0.95;
     text-transform: uppercase;
+    display: block;
   }
 
   .page-giron-veveyse .giron-hero__subtitle {
@@ -701,10 +702,6 @@
   .page-giron-veveyse .giron-intro {
     padding: 2rem 0;
     background-color: #eceff3;
-  }
-
-  .page-giron-veveyse .giron-intro .container {
-    max-width: 980px;
   }
 
   .page-giron-veveyse .giron-intro p {
