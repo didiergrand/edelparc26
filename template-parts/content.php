@@ -32,6 +32,11 @@
 
 	</div>
 <div class="single-content  container">
+<?php if ( is_singular() && has_post_thumbnail() ) : ?>
+<div class="single-featured-image">
+	<?php the_post_thumbnail( 'large' ); ?>
+</div>
+<?php endif; ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 		<?php
@@ -63,8 +68,8 @@
 		<?php edelparc26_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
-<?php
-get_sidebar();
-?>
+<?php if ( ! is_singular() ) : ?>
+	<?php get_sidebar(); ?>
+<?php endif; ?>
 </div>
 </section>
