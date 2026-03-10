@@ -370,3 +370,22 @@ function edelparc26_enhance_latest_posts_block( $block_content, $block ) {
 	return $html;
 }
 add_filter( 'render_block', 'edelparc26_enhance_latest_posts_block', 10, 2 );
+
+/**
+ * Standardize the "more" link label and classes.
+ */
+function edelparc26_customize_more_link( $more_link, $more_link_text ) {
+	preg_match( '/href="([^"]+)"/', $more_link, $matches );
+	$href = ! empty( $matches[1] ) ? $matches[1] : '';
+
+	if ( empty( $href ) ) {
+		return $more_link;
+	}
+
+	return sprintf(
+		'<a href="%1$s" class="more-link card-link">%2$s</a>',
+		esc_url( $href ),
+		esc_html__( 'Lire la suite', 'EDELPARC26' )
+	);
+}
+add_filter( 'the_content_more_link', 'edelparc26_customize_more_link', 10, 2 );
