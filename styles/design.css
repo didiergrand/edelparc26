@@ -917,29 +917,9 @@
     height: auto;
     display: block;
     border-radius: var(--borderradius);
+    margin-bottom: 1.5rem;
   }
 
-  @media screen and (max-width: 998px) {
-    .single-content .single-featured-image {
-      order: 1;
-    }
-
-    .single-content article {
-      order: 2;
-    }
-  }
-
-  @media screen and (min-width: 999px) {
-    .single-content .single-featured-image {
-      order: 2;
-      margin-bottom: 0;
-      align-self: start;
-    }
-
-    .single-content article {
-      order: 1;
-    }
-  }
   .category-bienvenue:hover h2:after {
     top: -190px;
   }
