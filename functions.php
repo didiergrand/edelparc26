@@ -389,3 +389,22 @@ function edelparc26_customize_more_link( $more_link, $more_link_text ) {
 	);
 }
 add_filter( 'the_content_more_link', 'edelparc26_customize_more_link', 10, 2 );
+
+/**
+ * Force a higher featured image size for Latest Posts blocks.
+ */
+function edelparc26_latest_posts_image_quality( $parsed_block ) {
+	if ( empty( $parsed_block['blockName'] ) || 'core/latest-posts' !== $parsed_block['blockName'] ) {
+		return $parsed_block;
+	}
+
+	if ( empty( $parsed_block['attrs'] ) ) {
+		$parsed_block['attrs'] = array();
+	}
+
+	// Keep the user's setting to show images, but improve image resolution.
+	$parsed_block['attrs']['featuredImageSizeSlug'] = 'large';
+
+	return $parsed_block;
+}
+add_filter( 'render_block_data', 'edelparc26_latest_posts_image_quality' );
