@@ -1901,12 +1901,6 @@
       display: none;
     }
   
-    #welcome{
-      /* display: grid;
-      grid-template-columns: 3fr 2fr; */
-      min-height: calc(100vh - 275px);
-
-    }
     .logohome{
       display: flex;
       align-items: center;
