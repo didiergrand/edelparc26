@@ -574,7 +574,6 @@
     background-color: transparent;
   }
   #actus{
-    background-color:var(--lightblue);
     background-size: cover;
     background-position: right;
     a{
@@ -584,19 +583,21 @@
   
   @media screen and (min-width: 999px) {
     #actus{
-      padding: 150px 0 0 0;
-      max-width: 400px;
-      min-width: 400px;
+      padding: 40px 0;
     }
   }
   @media screen and (min-width: 999px) {
-    #actus > .actus3cols{
+    #actus .actus3cols{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 50px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+    #actus .actus3cols article{
+      margin-bottom: 0;
     }
   }
-  #actus h2{
+  #actus h2,
+  #actus h3{
     text-align: center;
     padding: 2rem 0 0 0;
   }
@@ -1219,8 +1220,7 @@
   }
   @media screen and (min-width: 999px) {
     .home .main-navigation {
-      /* right: 24px;  remove 400px if we don't have news      */
-      right: 450px;
+      right: 24px;
 
     }
     .home .main-navigation.toggled {
@@ -1336,7 +1336,7 @@
     transition: 0.4s;
   }
   .home .site-main{
-    display: flex;
+    display: block;
   }
   @media screen and (max-width:998px){
     .site-main{
@@ -1905,9 +1905,6 @@
       /* display: grid;
       grid-template-columns: 3fr 2fr; */
       min-height: calc(100vh - 275px);
-      background-image: url('/wp-content/themes/edelparc26/images/bgslime.jpg');
-      background-size: cover;
-      background-position: center bottom;
 
     }
     .logohome{

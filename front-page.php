@@ -26,7 +26,7 @@ $args2 = array(
     'post_type' => 'post',
     'orderby' => 'date',
     'order' => 'DESC',
-    'posts_per_page' => 6,
+    'posts_per_page' => 3,
     'cat' => '3',
     'paged' => get_query_var('paged')
 );
@@ -39,6 +39,7 @@ if ($q2->have_posts()) {
     <section id="actus">
         <div class="container">
         <h3>Dernières actualités</h3>
+            <div class="actus3cols">
             <?php
             while ($q2->have_posts()) {
                 $q2->the_post();
@@ -46,6 +47,7 @@ if ($q2->have_posts()) {
                 get_template_part('template-parts/content-actus', get_post_type());
             }
             ?>
+            </div>
         </div>
     </section>
     <?php
