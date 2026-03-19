@@ -620,10 +620,11 @@
       text-transform: uppercase;
       font-weight: bold;
     }
-    h4{
+    h4,h3{
       color: var(--white);
       font-weight: bold;
       margin: 0;
+      text-align: left;
     }
     p{
       color: var(--white);
