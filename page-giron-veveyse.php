@@ -20,7 +20,10 @@ get_header();
 			the_post();
 
 			$hero_title       = get_post_meta( get_the_ID(), 'hero_title', true );
-			$hero_subtitle    = get_post_meta( get_the_ID(), 'hero_subtitle', true );
+			$hero_subtitle    = get_post_meta( get_the_ID(), 'giron_hero_subtitle', true );
+			if ( empty( $hero_subtitle ) ) {
+				$hero_subtitle = get_post_meta( get_the_ID(), 'hero_subtitle', true );
+			}
 			$hero_meta        = get_post_meta( get_the_ID(), 'hero_meta', true );
 			$hero_button_text = get_post_meta( get_the_ID(), 'hero_button_text', true );
 			$hero_button_url  = get_post_meta( get_the_ID(), 'hero_button_url', true );

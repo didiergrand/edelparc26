@@ -408,3 +408,95 @@ function edelparc26_latest_posts_image_quality( $parsed_block ) {
 	return $parsed_block;
 }
 add_filter( 'render_block_data', 'edelparc26_latest_posts_image_quality' );
+
+/**
+ * Add a dedicated subtitle field for the Giron Veveyse hero.
+ */
+function edelparc26_add_giron_hero_meta_box() {
+	add_meta_box(
+		'edelparc26-giron-hero',
+		__( 'Giron Hero', 'EDELPARC26' ),
+		'edelparc26_render_giron_hero_meta_box',
+		'page',
+		'normal',
+		'high'
+	);
+}
+add_action( 'add_meta_boxes', 'edelparc26_add_giron_hero_meta_box' );
+
+/**
+ * Render the Giron hero meta box.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function edelparc26_render_giron_hero_meta_box( $post ) {
+	$template = get_post_meta( $post->ID, '_wp_page_template', true );
+
+	if ( 'page-giron-veveyse.php' !== $template ) {
+		echo '<p>' . esc_html__( 'Ce champ est disponible pour le template Giron Veveyse.', 'EDELPARC26' ) . '</p>';
+		return;
+	}
+
+	wp_nonce_field( 'edelparc26_save_giron_hero', 'edelparc26_giron_hero_nonce' );
+
+	$subtitle = get_post_meta( $post->ID, 'giron_hero_subtitle', true );
+	if ( empty( $subtitle ) ) {
+		$subtitle = get_post_meta( $post->ID, 'hero_subtitle', true );
+	}
+	?>
+	<p>
+		<label for="edelparc26_giron_hero_subtitle"><strong><?php esc_html_e( 'Sous-titre du hero', 'EDELPARC26' ); ?></strong></label>
+	</p>
+	<p>
+		<input
+			type="text"
+			id="edelparc26_giron_hero_subtitle"
+			name="edelparc26_giron_hero_subtitle"
+			value="<?php echo esc_attr( $subtitle ); ?>"
+			class="widefat"
+		/>
+	</p>
+	<?php
+}
+
+/**
+ * Save Giron hero subtitle meta.
+ *
+ * @param int $post_id Post ID.
+ */
+function edelparc26_save_giron_hero_meta_box( $post_id ) {
+	if ( ! isset( $_POST['edelparc26_giron_hero_nonce'] ) ) {
+		return;
+	}
+
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['edelparc26_giron_hero_nonce'] ) ), 'edelparc26_save_giron_hero' ) ) {
+		return;
+	}
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
+	if ( ! isset( $_POST['edelparc26_giron_hero_subtitle'] ) ) {
+		return;
+	}
+
+	$template = get_post_meta( $post_id, '_wp_page_template', true );
+	if ( 'page-giron-veveyse.php' !== $template ) {
+		return;
+	}
+
+	$subtitle = sanitize_text_field( wp_unslash( $_POST['edelparc26_giron_hero_subtitle'] ) );
+
+	if ( '' === $subtitle ) {
+		delete_post_meta( $post_id, 'giron_hero_subtitle' );
+		return;
+	}
+
+	update_post_meta( $post_id, 'giron_hero_subtitle', $subtitle );
+}
+add_action( 'save_post_page', 'edelparc26_save_giron_hero_meta_box' );
