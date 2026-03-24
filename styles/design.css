@@ -626,6 +626,9 @@
       margin: 0;
       text-align: left;
     }
+    h4{
+      font-size: 28px;
+    }
     p{
       color: var(--white);
     }
