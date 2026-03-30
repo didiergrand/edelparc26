@@ -16,13 +16,25 @@
 
 		<div class="entry-content">
 			<div class="content-grid">
-				<div class="thumbnail">
-					<?php
-					if (has_post_thumbnail()) {
-						edelparc26_post_thumbnail();
-					}
-					?>
-				</div>
+
+							<div class="thumbnail thumbnail--decorated">
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-large" aria-hidden="true"></span>
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-medium" aria-hidden="true"></span>
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-small" aria-hidden="true"></span>
+								<?php
+								if ( has_post_thumbnail() ) {
+									ob_start();
+									edelparc26_post_thumbnail();
+									$thumbnail_html = ob_get_clean();
+
+									echo str_replace(
+										'<div class="post-thumbnail">',
+										'<div class="post-thumbnail"><span class="thumbnail-decor thumbnail-decor--panel" aria-hidden="true"></span>',
+										$thumbnail_html
+									);
+								}
+								?>
+							</div>
 				<div class="content">
 					<?php
 					the_content();
