@@ -2175,7 +2175,7 @@
     min-width: 0;
 }
 
-.page-content-image-right .thumbnail--decorated {
+.thumbnail--decorated {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -2184,14 +2184,14 @@
     overflow: visible;
 }
 
-.page-content-image-right .thumbnail--decorated .post-thumbnail {
+.thumbnail--decorated .post-thumbnail {
     position: relative;
     z-index: 2;
     margin: 0;
     width: 100%;
 }
 
-.page-content-image-right .thumbnail--decorated .post-thumbnail img {
+.thumbnail--decorated .post-thumbnail img {
     display: block;
     position: relative;
     z-index: 2;
@@ -2200,12 +2200,12 @@
     margin-left: 20%;
 }
 
-.page-content-image-right .thumbnail-decor {
+.thumbnail--decorated .thumbnail-decor {
     position: absolute;
     pointer-events: none;
 }
 
-.page-content-image-right .thumbnail-decor--panel {
+.thumbnail--decorated .thumbnail-decor--panel {
     top: -10%;
     left: 30%;
     width: 60%;
@@ -2213,27 +2213,27 @@
     background-color: var(--darkblue);
 }
 
-.page-content-image-right .thumbnail-decor--star {
+.thumbnail--decorated .thumbnail-decor--star {
     z-index: 3;
     background-color: var(--yellow);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-.page-content-image-right .thumbnail-decor--star-large {
+.thumbnail--decorated .thumbnail-decor--star-large {
     left: -1.25rem;
     top: 13.5rem;
     width: 5.2rem;
     aspect-ratio: 1;
 }
 
-.page-content-image-right .thumbnail-decor--star-medium {
+.thumbnail--decorated .thumbnail-decor--star-medium {
     left: 3rem;
     top: 16.2rem;
     width: 3.4rem;
     aspect-ratio: 1;
 }
 
-.page-content-image-right .thumbnail-decor--star-small {
+.thumbnail--decorated .thumbnail-decor--star-small {
     left: 6.25rem;
     top: 15.65rem;
     width: 2rem;
@@ -2248,36 +2248,36 @@
             "content";
     }
 
-    .page-content-image-right .thumbnail--decorated {
+    .thumbnail--decorated {
         justify-content: center;
         padding: 1.75rem 1rem 2.5rem;
     }
 
-    .page-content-image-right .thumbnail--decorated .post-thumbnail img {
+    .thumbnail--decorated .post-thumbnail img {
         width: min(78%, 430px);
         margin-left: 11%;
     }
 
-    .page-content-image-right .thumbnail-decor--panel {
+    .thumbnail--decorated .thumbnail-decor--panel {
         top: -6%;
         left: 22%;
         width: 72%;
         height: 100%;
     }
 
-    .page-content-image-right .thumbnail-decor--star-large {
+    .thumbnail--decorated .thumbnail-decor--star-large {
         left: 0;
         top: 10rem;
         width: 4rem;
     }
 
-    .page-content-image-right .thumbnail-decor--star-medium {
+    .thumbnail--decorated .thumbnail-decor--star-medium {
         left: 2.75rem;
         top: 12.2rem;
         width: 2.75rem;
     }
 
-    .page-content-image-right .thumbnail-decor--star-small {
+    .thumbnail--decorated .thumbnail-decor--star-small {
         left: 4.9rem;
         top: 11.35rem;
         width: 1.7rem;
