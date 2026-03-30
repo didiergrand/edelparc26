@@ -2152,7 +2152,6 @@
 .content {
     grid-area: content;
     min-width: 0;
-    pz
 }
 
 @media (max-width: 768px) {
@@ -2163,6 +2162,19 @@
             "content";
     }
 }
+.page-content-image-right .content-grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "content thumbnail";
+}
+
+.page-content-image-right .thumbnail {
+    max-width: 100%;
+}
+
+.page-content-image-right .content {
+    min-width: 0;
+}
+
 iframe{
   max-height: 90vh;
   width: 100%;
