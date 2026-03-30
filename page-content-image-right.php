@@ -34,7 +34,11 @@ get_header();
 								);
 								?>
 							</div>
-							<div class="thumbnail">
+							<div class="thumbnail thumbnail--decorated">
+								<span class="thumbnail-decor thumbnail-decor--panel" aria-hidden="true"></span>
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-large" aria-hidden="true"></span>
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-medium" aria-hidden="true"></span>
+								<span class="thumbnail-decor thumbnail-decor--star thumbnail-decor--star-small" aria-hidden="true"></span>
 								<?php
 								if ( has_post_thumbnail() ) {
 									edelparc26_post_thumbnail();

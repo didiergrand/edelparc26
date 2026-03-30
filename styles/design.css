@@ -2175,6 +2175,106 @@
     min-width: 0;
 }
 
+.page-content-image-right .thumbnail--decorated {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2.75rem 1.5rem 2rem 0;
+    overflow: visible;
+}
+
+.page-content-image-right .thumbnail--decorated .post-thumbnail {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.page-content-image-right .thumbnail--decorated .post-thumbnail img {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: min(100%, 420px);
+    height: auto;
+}
+
+.page-content-image-right .thumbnail-decor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.page-content-image-right .thumbnail-decor--panel {
+    top: 0;
+    right: 0;
+    width: min(72%, 340px);
+    height: calc(100% - 3.5rem);
+    background-color: var(--darkblue);
+}
+
+.page-content-image-right .thumbnail-decor--star {
+    z-index: 3;
+    background-color: var(--yellow);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.page-content-image-right .thumbnail-decor--star-large {
+    left: -1.25rem;
+    bottom: 3.5rem;
+    width: 5.2rem;
+    aspect-ratio: 1;
+}
+
+.page-content-image-right .thumbnail-decor--star-medium {
+    left: 3rem;
+    bottom: 2.2rem;
+    width: 3.4rem;
+    aspect-ratio: 1;
+}
+
+.page-content-image-right .thumbnail-decor--star-small {
+    left: 6.25rem;
+    bottom: 3.65rem;
+    width: 2rem;
+    aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+    .page-content-image-right .thumbnail--decorated {
+        justify-content: center;
+        padding: 1.75rem 1rem 2.5rem;
+    }
+
+    .page-content-image-right .thumbnail--decorated .post-thumbnail img {
+        width: 100%;
+        max-width: 430px;
+    }
+
+    .page-content-image-right .thumbnail-decor--panel {
+        right: 1rem;
+        left: auto;
+        width: min(75%, 300px);
+        height: calc(100% - 3rem);
+    }
+
+    .page-content-image-right .thumbnail-decor--star-large {
+        left: 0;
+        bottom: 1.5rem;
+        width: 4rem;
+    }
+
+    .page-content-image-right .thumbnail-decor--star-medium {
+        left: 2.75rem;
+        bottom: 0.9rem;
+        width: 2.75rem;
+    }
+
+    .page-content-image-right .thumbnail-decor--star-small {
+        left: 4.9rem;
+        bottom: 1.85rem;
+        width: 1.7rem;
+    }
+}
+
 iframe{
   max-height: 90vh;
   width: 100%;
