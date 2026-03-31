@@ -899,6 +899,9 @@
     align-self: flex-start;
   }
   /* ---- End Giron Veveyse ---- */
+  .site{
+    overflow-x: hidden;
+  }
 
   .site,
   .single{
