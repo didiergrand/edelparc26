@@ -163,6 +163,7 @@
   --------------------------------------------- */
   body {
     background: #fff;
+    overflow-x: hidden;
   }
   
   hr {
@@ -2255,7 +2256,7 @@
 
     .thumbnail--decorated .post-thumbnail img {
         width: 100%;
-        margin-left: 11%;
+        margin-left: 0;
     }
 
     .thumbnail--decorated .thumbnail-decor--panel {
@@ -2266,13 +2267,13 @@
     }
 
     .thumbnail--decorated .thumbnail-decor--star-large {
-        left: 0;
+        left: -2rem;
         top: 10rem;
         width: 4rem;
     }
 
     .thumbnail--decorated .thumbnail-decor--star-medium {
-        left: 2.75rem;
+        left: 1.75rem;
         top: 12.2rem;
         width: 2.75rem;
     }
