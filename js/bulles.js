@@ -9,7 +9,7 @@
   let cleanup = null;
   let modeBtnOn = null;
   let modeBtnOff = null;
-  let bubbleModeActive = true;
+  let bubbleModeActive = false;
 
   function mount() {
     if (mounted) return;
