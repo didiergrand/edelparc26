@@ -2230,21 +2230,21 @@
 
 .thumbnail--decorated .thumbnail-decor--star-large {
     left: -1.25rem;
-    top: 12rem;
+    top: 20rem;
     width: 5.2rem;
     aspect-ratio: 1;
 }
 
 .thumbnail--decorated .thumbnail-decor--star-medium {
     left: 3rem;
-    top: 15rem;
+    top: 22rem;
     width: 3.4rem;
     aspect-ratio: 1;
 }
 
 .thumbnail--decorated .thumbnail-decor--star-small {
     left: 6.25rem;
-    top: 14.5rem;
+    top: 21.5rem;
     width: 2rem;
     aspect-ratio: 1;
 }
