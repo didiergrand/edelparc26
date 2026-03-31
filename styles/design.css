@@ -1412,6 +1412,28 @@
     clear: both;
     margin: 0 0 1.5em;
   }
+
+  .single-content--fullwidth {
+    width: 100%;
+    max-width: none;
+    padding: 0 20px 40px;
+  }
+
+  .single-featured-image--fullwidth {
+    margin-bottom: 2rem;
+  }
+
+  .single-featured-image--fullwidth img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .single-sponsors__header {
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+  }
   
   .jour {
     position: relative;
@@ -2222,21 +2244,21 @@
 
 .thumbnail--decorated .thumbnail-decor--star-large {
     left: -1.25rem;
-    top: 13.5rem;
+    top: 7rem;
     width: 5.2rem;
     aspect-ratio: 1;
 }
 
 .thumbnail--decorated .thumbnail-decor--star-medium {
     left: 3rem;
-    top: 16.2rem;
+    top: 10rem;
     width: 3.4rem;
     aspect-ratio: 1;
 }
 
 .thumbnail--decorated .thumbnail-decor--star-small {
     left: 6.25rem;
-    top: 15.65rem;
+    top: 9.5rem;
     width: 2rem;
     aspect-ratio: 1;
 }
