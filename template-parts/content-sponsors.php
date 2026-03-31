@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying sponsor posts in full width.
+ * Template part for displaying sponsor posts in a single-column layout.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,7 +10,7 @@
 ?>
 <section class="single-sponsors">
 	<div class="background-title">
-		<header class="entry-header single-sponsors__header">
+		<header class="entry-header container">
 			<?php
 			if ( is_singular() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -30,10 +30,10 @@
 		</header>
 	</div>
 
-	<div class="single-content single-content--fullwidth">
+	<div class="single-content single-content--one-column container">
 		<?php if ( is_singular() && has_post_thumbnail() ) : ?>
-			<div class="single-featured-image single-featured-image--fullwidth">
-				<?php the_post_thumbnail( 'full' ); ?>
+			<div class="single-featured-image">
+				<?php the_post_thumbnail( 'large' ); ?>
 			</div>
 		<?php endif; ?>
 
