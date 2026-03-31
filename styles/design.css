@@ -1116,9 +1116,9 @@
       color: var(--yellow);
     }
   .main-navigation #primary-menu>li>a {
-    font-weight: var(--boldweight);
     text-transform: uppercase;
     line-height: 1.2;
+    font-size: 28px;
   }
   
   /* Small menu. */
@@ -1329,6 +1329,7 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    padding-right: 120px;
   }
   
   .menu-menu-1-container {
@@ -2120,7 +2121,7 @@
 }
 @media screen and (min-width: 1200px) {
   .toggled #primary-menu {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .btn-primary{
