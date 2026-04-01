@@ -875,7 +875,7 @@
   .wp-block-latest-posts__list .wp-block-latest-posts__post-title {
     margin: 22px 22px 0 22px;
     font-family: var(--headingfont);
-    font-size: 2.15rem;
+    font-size: 1.75rem;
     font-weight: var(--boldweight);
     line-height: 1.05;
     color: var(--darkblue);
@@ -1347,6 +1347,9 @@
   }
   .home .site-main{
     display: block;
+  }
+  .site-main{
+    margin-bottom: 150px;
   }
   @media screen and (max-width:998px){
     .site-main{
