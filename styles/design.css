@@ -582,6 +582,9 @@
     a{
       text-decoration: none;
     }
+    .actus3cols article{
+      border-radius: 8px;
+    }
   }
   
   @media screen and (min-width: 999px) {
@@ -756,6 +759,7 @@
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px 8px 0 0;
   }
 
   #giron-cards article .home_actus-content {
