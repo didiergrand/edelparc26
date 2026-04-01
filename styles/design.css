@@ -919,7 +919,7 @@
   }
 
   .single-content .single-featured-image {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem 0;
   }
 
   .single-content .single-featured-image img {
