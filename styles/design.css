@@ -2350,5 +2350,5 @@ figure.wp-block-gallery.has-nested-images {
 }
 .pdf-h object{
   aspect-ratio: 14 / 10;
-  height: auto;
+  height: auto !important;
 }
