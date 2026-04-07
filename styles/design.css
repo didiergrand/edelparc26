@@ -2348,3 +2348,6 @@ iframe{
 figure.wp-block-gallery.has-nested-images {
   border-radius: 8px;
 }
+.pdf-h{
+  aspect-ratio: 14 / 10;
+}
