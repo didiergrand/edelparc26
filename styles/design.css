@@ -1107,12 +1107,12 @@
       color: var(--yellow);
     }
   .sub-menu li a:after{
-    background-color: #fff;
-    bottom: -1px;
+    background-color: hsla(0, 0%, 100%, .1);
     content: "";
     display: block;
-    height: 1px;
+    height: 100%;
     left: 0;
+    bottom: 0;
     position: absolute;
     transform: translateZ(0) scalex(0);
     transform-origin: left center;
@@ -1127,9 +1127,8 @@
 }
 
 .sub-menu li a {
-    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
     display: block;
-    padding: 1em 0;
+    padding: 1em;
     position: relative;
 }
 
@@ -1269,6 +1268,7 @@
   .toggled #primary-menu {
     overflow: auto;
     display: grid;
+    gap: 16px;
     grid-template-columns: 1fr;
     width: calc(100vw - 20px);
     margin-right: 10px;
@@ -1281,7 +1281,6 @@
   }
   .toggled #primary-menu li {
     grid-column: span 1;
-    padding: 5px;
   }
   
   .toggled #primary-menu li.social {
