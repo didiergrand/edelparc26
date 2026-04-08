@@ -1118,6 +1118,7 @@
     transform-origin: left center;
     transition: all .3s ease-in-out;
     width: 100%;
+    border-radius: 4px;
 }
 .sub-menu li a:hover{
     color: var(--white);
@@ -1278,6 +1279,7 @@
     max-width: 1800px;
     right: 0;
     margin-left: auto;
+    border-radius: 4px;
   }
   .toggled #primary-menu li {
     grid-column: span 1;
