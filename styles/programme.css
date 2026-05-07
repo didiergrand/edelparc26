@@ -143,11 +143,18 @@
         text-decoration-color: currentColor;
       }
 
+      /* Stretched link: toute la carte devient cliquable */
+      .ep26-entry a::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+
       /* Entrées cliquables */
       .ep26-entry:has(a){
         position: relative;
         padding-right: 32px;
-        cursor: pointer;
         transition: transform .13s ease, box-shadow .13s ease;
       }
       .ep26-entry:has(a)::after{
@@ -159,6 +166,8 @@
         line-height: 1;
         opacity: .35;
         transition: opacity .13s ease, transform .13s ease;
+        z-index: 2;
+        pointer-events: none;
       }
       .ep26-entry:has(a):hover{
         transform: translateY(-2px);
