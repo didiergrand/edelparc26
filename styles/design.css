@@ -225,6 +225,24 @@
     padding-top: 6px;
     opacity: .7;
   }
+
+  /* Légende de galerie : remplace l'overlay kitsch du core */
+  .wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption)::before{
+    display: none;
+  }
+  .wp-block-gallery.has-nested-images figure.wp-block-image{
+    overflow: visible;
+  }
+  .wp-block-gallery.has-nested-images figure.wp-block-image figcaption{
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    color: var(--black);
+    font-size: 0.78rem;
+    padding: 6px 4px 0;
+    opacity: .65;
+    text-align: center;
+  }
   figure {
     margin: 1em 0;
   }
