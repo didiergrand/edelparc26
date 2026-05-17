@@ -923,7 +923,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
-    .category-photos .single-content{
+    .single-content:has(.category-photos){
       display: block;
     }
   }
