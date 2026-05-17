@@ -214,6 +214,17 @@
   .wp-block-image img{
     border-radius: 8px;
   }
+  .wp-block-image:not(.alignfull):not(.alignwide){
+    display: table;
+  }
+  .wp-block-image figcaption{
+    display: table-caption;
+    caption-side: bottom;
+    text-align: center;
+    font-size: 0.82rem;
+    padding-top: 6px;
+    opacity: .7;
+  }
   figure {
     margin: 1em 0;
   }
