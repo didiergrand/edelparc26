@@ -923,6 +923,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+    .category-photos .single-content{
+      display: block;
+    }
   }
 
   .single-content .single-featured-image {
