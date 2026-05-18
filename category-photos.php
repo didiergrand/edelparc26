@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for the "photos" category archive — no sidebar
+ * Template for the "photos" category archive — no sidebar, cards grid
  *
  * @package EDELPARC26
  */
@@ -18,15 +18,19 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_type() );
-			endwhile;
-			?>
-			<div class="container">
-				<?php the_posts_navigation(); ?>
-			</div>
+			<div id="giron-cards">
+				<div class="container">
+					<div class="cards-grid">
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							get_template_part( 'template-parts/content', 'photos' );
+						endwhile;
+						?>
+					</div><!-- .cards-grid -->
+					<?php the_posts_navigation(); ?>
+				</div><!-- .container -->
+			</div><!-- #giron-cards -->
 
 		<?php else : ?>
 
