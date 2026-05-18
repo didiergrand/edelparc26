@@ -32,7 +32,7 @@
 
 	</div>
 <div class="single-content  container">
-<?php if ( is_singular() && has_post_thumbnail() ) : ?>
+<?php if ( is_singular() && has_post_thumbnail() && ! has_category( 'photos' ) ) : ?>
 <div class="single-featured-image">
 	<?php the_post_thumbnail( 'large' ); ?>
 </div>
